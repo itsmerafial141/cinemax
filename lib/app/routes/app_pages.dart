@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import 'package:cinemax/app/modules/home/bindings/home_binding.dart';
 import 'package:cinemax/app/modules/home/views/home_view.dart';
+import 'package:cinemax/app/modules/homepage/bindings/homepage_binding.dart';
+import 'package:cinemax/app/modules/homepage/views/homepage_view.dart';
 import 'package:cinemax/app/modules/onboarding/bindings/onboarding_binding.dart';
 import 'package:cinemax/app/modules/onboarding/views/onboarding_view.dart';
 import 'package:cinemax/app/modules/splash_screen/bindings/splash_screen_binding.dart';
@@ -15,7 +17,9 @@ class AppPages {
   AppPages._();
 
   static const INITIAL_HM = Routes.HOME;
+  static const INITIAL_HP = Routes.HOMEPAGE;
   static const INITIAL_OB = Routes.ONBOARDING;
+  static const INITIAL_SS = Routes.SPLASH_SCREEN;
 
   static final routes = [
     GetPage(
@@ -32,6 +36,11 @@ class AppPages {
       name: _Paths.SPLASH_SCREEN,
       page: () => SplashScreenView(),
       binding: SplashScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.HOMEPAGE,
+      page: () => HomepageView(),
+      binding: HomepageBinding(),
     ),
   ];
 }

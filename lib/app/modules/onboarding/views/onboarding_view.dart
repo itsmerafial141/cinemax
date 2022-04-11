@@ -1,3 +1,4 @@
+import 'package:cinemax/app/routes/app_pages.dart';
 import 'package:cinemax/app/values/colors.dart';
 import 'package:cinemax/app/values/strings.dart';
 import 'package:cinemax/app/values/styles.dart';
@@ -12,6 +13,7 @@ import '../controllers/onboarding_controller.dart';
 class OnboardingView extends GetView<OnboardingController> {
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(OnboardingController());
     return Scaffold(
       body: PageView(
         controller: controller.dotsPageController,
@@ -147,6 +149,10 @@ class OnboardingView extends GetView<OnboardingController> {
                         duration: Duration(milliseconds: 500),
                         curve: Curves.easeInOut,
                       );
+                      if (controller.pageController.value ==
+                          MyStrings.onbListTittle.length - 1) {
+                        Get.toNamed(AppPages.INITIAL_SS);
+                      }
                     },
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all<Size>(
@@ -169,10 +175,9 @@ class OnboardingView extends GetView<OnboardingController> {
                         ? Text(
                             "GO",
                             style: TextStyle(
-                              fontFamily: MyStyles.SemiBold,
-                              fontSize: MyStyles.H5,
-                              color: MyColors.dark
-                            ),
+                                fontFamily: MyStyles.SemiBold,
+                                fontSize: MyStyles.H5,
+                                color: MyColors.dark),
                           )
                         : Icon(
                             Icons.arrow_right,

@@ -9,10 +9,12 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const ONBOARDING = _Paths.ONBOARDING;
   static const SPLASH_SCREEN = _Paths.SPLASH_SCREEN;
+  static const HOMEPAGE = _Paths.HOMEPAGE;
 }
 
 abstract class _Paths {
   static const HOME = '/home';
   static const ONBOARDING = '/onboarding';
   static const SPLASH_SCREEN = '/splash-screen';
+  static const HOMEPAGE = '/homepage';
 }
