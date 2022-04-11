@@ -1,5 +1,4 @@
-import 'package:cinemax/app/modules/homepage/views/homepage_view.dart';
-import 'package:cinemax/app/modules/onboarding/views/onboarding_view.dart';
+import 'package:cinemax/app/modules/login_sign/views/login_sign_view.dart';
 import 'package:cinemax/app/values/colors.dart';
 import 'package:cinemax/app/values/styles.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,7 @@ class SplashScreenView extends GetView<SplashScreenController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: splash.SplashScreenView(
-        navigateRoute: HomepageView(),
+        navigateRoute: LoginSignView(),
         duration: 5000,
         imageSize: 130,
         imageSrc: "assets/icons/live_tv_black_24dp 1.png",

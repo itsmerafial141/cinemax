@@ -10,6 +10,8 @@ abstract class Routes {
   static const ONBOARDING = _Paths.ONBOARDING;
   static const SPLASH_SCREEN = _Paths.SPLASH_SCREEN;
   static const HOMEPAGE = _Paths.HOMEPAGE;
+  static const LOGIN_SIGN = _Paths.LOGIN_SIGN;
+  static const LOGIN = _Paths.LOGIN;
 }
 
 abstract class _Paths {
@@ -17,4 +19,6 @@ abstract class _Paths {
   static const ONBOARDING = '/onboarding';
   static const SPLASH_SCREEN = '/splash-screen';
   static const HOMEPAGE = '/homepage';
+  static const LOGIN_SIGN = '/login-sign';
+  static const LOGIN = '/login';
 }

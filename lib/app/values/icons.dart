@@ -40,4 +40,8 @@ class MyIcons {
   static String audio_sound = "assets/icons/audio.png";
   static String search = "assets/icons/search.png";
   static String home = "assets/icons/home.png";
+  static String logo = "assets/icons/live_tv_black_24dp 1.png";
+  static String logo_google = "assets/icons/Icon - Google.png";
+  static String logo_apple = "assets/icons/Icon - Apple.png";
+  static String logo_facebook = "assets/icons/Icon - Facebook.png";
 }
