@@ -4,6 +4,8 @@ import 'package:cinemax/app/modules/home/bindings/home_binding.dart';
 import 'package:cinemax/app/modules/home/views/home_view.dart';
 import 'package:cinemax/app/modules/onboarding/bindings/onboarding_binding.dart';
 import 'package:cinemax/app/modules/onboarding/views/onboarding_view.dart';
+import 'package:cinemax/app/modules/splash_screen/bindings/splash_screen_binding.dart';
+import 'package:cinemax/app/modules/splash_screen/views/splash_screen_view.dart';
 
 // ignore_for_file: constant_identifier_names
 
@@ -25,6 +27,11 @@ class AppPages {
       name: _Paths.ONBOARDING,
       page: () => OnboardingView(),
       binding: OnboardingBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPLASH_SCREEN,
+      page: () => SplashScreenView(),
+      binding: SplashScreenBinding(),
     ),
   ];
 }
