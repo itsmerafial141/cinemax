@@ -12,7 +12,8 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL_HM = Routes.HOME;
+  static const INITIAL_OB = Routes.ONBOARDING;
 
   static final routes = [
     GetPage(
