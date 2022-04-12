@@ -1,3 +1,4 @@
+import 'package:cinemax/app/routes/app_pages.dart';
 import 'package:cinemax/app/values/strings.dart';
 import 'package:flutter/material.dart';
 
@@ -96,7 +97,9 @@ class LoginSignView extends GetView<LoginSignController> {
                 Tooltip(
                   message: "Login",
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed(AppPages.INITIAL_LG);
+                    },
                     borderRadius: BorderRadius.circular(Get.width),
                     child: Text(
                       "Login",

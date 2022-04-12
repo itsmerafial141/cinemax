@@ -16,6 +16,7 @@ class MyColors {
   static Color black = Color.fromRGBO(23, 23, 37, 1);
   static Color darkGray = Color.fromRGBO(105, 105, 116, 1);
   static Color grey = Color.fromRGBO(146, 146, 157, 1);
+  static Color grey50 = Color.fromRGBO(146, 146, 157, 0.5);
   static Color whiteGrey = Color.fromRGBO(235, 235, 239, 1);
   static Color white = Color.fromRGBO(255, 255, 255, 1);
   static Color lineDark = Color.fromRGBO(234, 234, 234, 1);

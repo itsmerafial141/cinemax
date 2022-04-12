@@ -24,6 +24,8 @@ class AppPages {
   static const INITIAL_HP = Routes.HOMEPAGE;
   static const INITIAL_OB = Routes.ONBOARDING;
   static const INITIAL_SS = Routes.SPLASH_SCREEN;
+  static const INITIAL_LS = Routes.LOGIN_SIGN;
+  static const INITIAL_LG = Routes.LOGIN;
 
   static final routes = [
     GetPage(
