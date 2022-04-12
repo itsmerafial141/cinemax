@@ -2,13 +2,17 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class SignupController extends GetxController {
+class SignupController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   late TextEditingController fullnameController;
   late TextEditingController emailController;
   late TextEditingController passwordController;
 
+  late AnimationController animationController;
+
   var visiblePassword = false.obs;
   var fieldNode = false.obs;
+  var agreePolice = false.obs;
   var focusNode = FocusNode();
 
   bool emailIsValidate(String text) {
@@ -27,6 +31,18 @@ class SignupController extends GetxController {
     passwordController = TextEditingController();
 
     focusNode.addListener(onFocusChanged);
+
+    animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+    );
+
+    animationController.addStatusListener((status) async {
+      if (status == AnimationStatus.completed) {
+        animationController.reverse();
+        // animationController.reset();
+      }
+    });
   }
 
   @override
@@ -38,5 +54,7 @@ class SignupController extends GetxController {
 
     focusNode.removeListener(onFocusChanged);
     focusNode.dispose();
+
+    animationController.dispose();
   }
 }

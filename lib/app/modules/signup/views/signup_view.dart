@@ -133,18 +133,31 @@ class SignupView extends GetView<SignupController> {
                   children: [
                     Tooltip(
                       message: "Aggree Rules",
-                      child: InkWell(
-                        onTap: () {},
-                        borderRadius: BorderRadius.circular(5),
-                        child: Container(
-                          height: 24,
-                          width: 24,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            border: Border.all(
-                              width: 1,
-                              color: MyColors.grey,
+                      child: Container(
+                        height: 24,
+                        width: 24,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all(
+                            width: 1,
+                            color: MyColors.grey,
+                          ),
+                        ),
+                        child: Obx(
+                          () => Checkbox(
+                            value: controller.agreePolice.value,
+                            onChanged: (value) {
+                              controller.agreePolice.toggle();
+                            },
+                            side: BorderSide(width: 0),
+                            checkColor: MyColors.dark,
+                            fillColor: MaterialStateProperty.all<Color>(
+                              MyColors.blueAccent,
                             ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(3),
+                            ),
+                            splashRadius: 12,
                           ),
                         ),
                       ),
