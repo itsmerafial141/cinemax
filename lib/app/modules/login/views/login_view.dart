@@ -149,7 +149,9 @@ class LoginView extends GetView<LoginController> {
               Tooltip(
                 message: "Login",
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.offAllNamed(AppPages.INITIAL_HM);
+                  },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
                       MyColors.blueAccent,
