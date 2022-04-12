@@ -1,15 +1,15 @@
 import 'package:cinemax/app/values/colors.dart';
-import 'package:cinemax/app/values/icons.dart';
-import 'package:cinemax/app/values/styles.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/login_controller.dart';
-import '../widgets/log_custom_passfield_widget.dart';
-import '../widgets/log_custom_textfield_widget.dart';
+import '../../../values/icons.dart';
+import '../../../values/styles.dart';
+import '../../login/widgets/log_custom_textfield_widget.dart';
+import '../controllers/signup_controller.dart';
+import '../widgets/sgn_custom_passfield_widget.dart';
 
-class LoginView extends GetView<LoginController> {
+class SignupView extends GetView<SignupController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +28,7 @@ class LoginView extends GetView<LoginController> {
                       width: Get.width,
                       alignment: Alignment.center,
                       child: Text(
-                        "Login",
+                        "Sign Up",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: MyStyles.SemiBold,
@@ -68,7 +68,7 @@ class LoginView extends GetView<LoginController> {
                 height: 40,
               ),
               Text(
-                "Hi, Tiffany",
+                "Let’s get started",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: MyStyles.SemiBold,
@@ -80,7 +80,7 @@ class LoginView extends GetView<LoginController> {
                 height: 10,
               ),
               Text(
-                "Welcome back! Please enter\nyour details.",
+                "The latest movies and series\nare here",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: MyStyles.Medium,
@@ -89,7 +89,18 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: 20,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                child: LOGCustomTextFieldWidget(
+                  label: "Full Name",
+                  hintText: "Your name here...",
+                  controller: controller.fullnameController,
+                ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 20),
@@ -104,47 +115,80 @@ class LoginView extends GetView<LoginController> {
               ),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 20),
-                child: LOGCustomPassFieldWidget(
+                child: SGNCustomPassFieldWidget(
                   onTap: () {
                     controller.visiblePassword.toggle();
                   },
                   label: "Password",
-                  hintText: "Password1234",
+                  hintText: "Example1234",
                   controllers: controller.passwordController,
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
-              Container(
-                width: Get.width,
-                margin: EdgeInsets.symmetric(horizontal: 10),
-                alignment: Alignment.centerRight,
-                child: Tooltip(
-                  message: "Forgot Password",
-                  child: InkWell(
-                    onTap: () {},
-                    borderRadius: BorderRadius.circular(Get.width),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Text(
-                        "Forgot Password?",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: MyStyles.Medium,
-                          fontSize: MyStyles.H6,
-                          color: MyColors.blueAccent,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  children: [
+                    Tooltip(
+                      message: "Aggree Rules",
+                      child: InkWell(
+                        onTap: () {},
+                        borderRadius: BorderRadius.circular(5),
+                        child: Container(
+                          height: 24,
+                          width: 24,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            border: Border.all(
+                              width: 1,
+                              color: MyColors.grey,
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    RichText(
+                      text: TextSpan(
+                        style: TextStyle(
+                          fontSize: MyStyles.H6,
+                          fontFamily: MyStyles.Medium,
+                          color: MyColors.grey,
+                        ),
+                        children: <TextSpan>[
+                          TextSpan(text: "I agree to the "),
+                          TextSpan(
+                            text: "Terms and Services",
+                            style: TextStyle(
+                              fontSize: MyStyles.H6,
+                              fontFamily: MyStyles.Medium,
+                              color: MyColors.blueAccent,
+                            ),
+                          ),
+                          TextSpan(text: " and "),
+                          TextSpan(
+                            text: "Privacy Policy",
+                            style: TextStyle(
+                              fontSize: MyStyles.H6,
+                              fontFamily: MyStyles.Medium,
+                              color: MyColors.blueAccent,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(
                 height: 40,
               ),
               Tooltip(
-                message: "Login",
+                message: "Sign Up",
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ButtonStyle(
@@ -161,7 +205,7 @@ class LoginView extends GetView<LoginController> {
                     ),
                   ),
                   child: Text(
-                    "Login",
+                    "Sign Up",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: MyStyles.Medium,

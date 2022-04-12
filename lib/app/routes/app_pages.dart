@@ -10,6 +10,8 @@ import '../modules/login_sign/bindings/login_sign_binding.dart';
 import '../modules/login_sign/views/login_sign_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
+import '../modules/signup/bindings/signup_binding.dart';
+import '../modules/signup/views/signup_view.dart';
 import '../modules/splash_screen/bindings/splash_screen_binding.dart';
 import '../modules/splash_screen/views/splash_screen_view.dart';
 
@@ -26,6 +28,7 @@ class AppPages {
   static const INITIAL_SS = Routes.SPLASH_SCREEN;
   static const INITIAL_LS = Routes.LOGIN_SIGN;
   static const INITIAL_LG = Routes.LOGIN;
+  static const INITIAL_SU = Routes.SIGNUP;
 
   static final routes = [
     GetPage(
@@ -57,6 +60,11 @@ class AppPages {
       name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.SIGNUP,
+      page: () => SignupView(),
+      binding: SignupBinding(),
     ),
   ];
 }

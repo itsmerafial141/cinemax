@@ -13,7 +13,7 @@ import '../widgets/lgn_custom_button_widget.dart';
 class LoginSignView extends GetView<LoginSignController> {
   @override
   Widget build(BuildContext context) {
-    var controller = Get.put(LoginSignController());
+    // var controller = Get.put(LoginSignController());
     return Scaffold(
       backgroundColor: MyColors.dark,
       body: Container(
@@ -53,7 +53,9 @@ class LoginSignView extends GetView<LoginSignController> {
             Tooltip(
               message: "Sign Up",
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppPages.INITIAL_SU);
+                },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(
                     MyColors.blueAccent,
