@@ -15,7 +15,7 @@ class ResetPasswordController extends GetxController {
   void resetPassword() {
     if (emailIsValidate(emailController.text)) {
       emailError.value = false;
-      Get.toNamed(AppPages.INITIAL_HM);
+      Get.toNamed(AppPages.INITIAL_VR);
     } else {
       emailError.value = true;
     }
