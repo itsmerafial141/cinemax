@@ -8,6 +8,8 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/login_sign/bindings/login_sign_binding.dart';
 import '../modules/login_sign/views/login_sign_view.dart';
+import '../modules/new_password/bindings/new_password_binding.dart';
+import '../modules/new_password/views/new_password_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
 import '../modules/reset_password/bindings/reset_password_binding.dart';
@@ -81,6 +83,11 @@ class AppPages {
       name: _Paths.VERIFICATION,
       page: () => VerificationView(),
       binding: VerificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.NEW_PASSWORD,
+      page: () => NewPasswordView(),
+      binding: NewPasswordBinding(),
     ),
   ];
 }
