@@ -16,6 +16,8 @@ import '../modules/signup/bindings/signup_binding.dart';
 import '../modules/signup/views/signup_view.dart';
 import '../modules/splash_screen/bindings/splash_screen_binding.dart';
 import '../modules/splash_screen/views/splash_screen_view.dart';
+import '../modules/verification/bindings/verification_binding.dart';
+import '../modules/verification/views/verification_view.dart';
 
 // ignore_for_file: constant_identifier_names
 
@@ -32,6 +34,7 @@ class AppPages {
   static const INITIAL_LG = Routes.LOGIN;
   static const INITIAL_SU = Routes.SIGNUP;
   static const INITIAL_RP = Routes.RESET_PASSWORD;
+  static const INITIAL_VR = Routes.VERIFICATION;
 
   static final routes = [
     GetPage(
@@ -73,6 +76,11 @@ class AppPages {
       name: _Paths.RESET_PASSWORD,
       page: () => ResetPasswordView(),
       binding: ResetPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.VERIFICATION,
+      page: () => VerificationView(),
+      binding: VerificationBinding(),
     ),
   ];
 }
