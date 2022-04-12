@@ -1,3 +1,4 @@
+import 'package:cinemax/app/routes/app_pages.dart';
 import 'package:cinemax/app/values/colors.dart';
 import 'package:cinemax/app/values/icons.dart';
 import 'package:cinemax/app/values/styles.dart';
@@ -123,7 +124,9 @@ class LoginView extends GetView<LoginController> {
                 child: Tooltip(
                   message: "Forgot Password",
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed(AppPages.INITIAL_RP);
+                    },
                     borderRadius: BorderRadius.circular(Get.width),
                     child: Container(
                       padding: EdgeInsets.symmetric(horizontal: 10),

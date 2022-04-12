@@ -31,6 +31,7 @@ class AppPages {
   static const INITIAL_LS = Routes.LOGIN_SIGN;
   static const INITIAL_LG = Routes.LOGIN;
   static const INITIAL_SU = Routes.SIGNUP;
+  static const INITIAL_RP = Routes.RESET_PASSWORD;
 
   static final routes = [
     GetPage(
