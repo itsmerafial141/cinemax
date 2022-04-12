@@ -34,7 +34,7 @@ class SGNCustomPassFieldWidget extends GetView<SignupController> {
               cursorColor: MyColors.white,
               textAlignVertical: TextAlignVertical.center,
               style: TextStyle(color: MyColors.grey),
-              obscureText: controller.visiblePassword.isTrue ? true : false,
+              obscureText: controller.visiblePassword.value ? false : true,
               enableSuggestions: false,
               autocorrect: false,
               decoration: InputDecoration(

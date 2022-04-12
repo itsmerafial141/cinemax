@@ -12,8 +12,9 @@ class SignupController extends GetxController
 
   var visiblePassword = false.obs;
   var fieldNode = false.obs;
-  var agreePolice = false.obs;
   var focusNode = FocusNode();
+
+  var agreePolice = false.obs;
 
   bool emailIsValidate(String text) {
     return EmailValidator.validate(text);

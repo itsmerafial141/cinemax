@@ -30,7 +30,7 @@ class VerificationController extends GetxController {
     ];
     print(codeIsEmpty());
     if (!codeIsEmpty()) {
-      Get.toNamed(AppPages.INITIAL_HM);
+      Get.toNamed(AppPages.INITIAL_NP);
       print("Verify");
     } else {
       print("Code is empty");

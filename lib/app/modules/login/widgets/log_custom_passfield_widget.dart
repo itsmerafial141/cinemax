@@ -34,7 +34,7 @@ class LOGCustomPassFieldWidget extends GetView<LoginController> {
               cursorColor: MyColors.white,
               textAlignVertical: TextAlignVertical.center,
               style: TextStyle(color: MyColors.grey),
-              obscureText: controller.visiblePassword.isTrue ? true : false,
+              obscureText: controller.visiblePassword.isTrue ? false : true,
               enableSuggestions: false,
               autocorrect: false,
               decoration: InputDecoration(
