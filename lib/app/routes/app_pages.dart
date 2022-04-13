@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
 
+import 'package:cinemax/app/modules/navigation/bindings/navigation_binding.dart';
+import 'package:cinemax/app/modules/navigation/views/navigation_view.dart';
+
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/homepage/bindings/homepage_binding.dart';
@@ -89,6 +92,11 @@ class AppPages {
       name: _Paths.NEW_PASSWORD,
       page: () => NewPasswordView(),
       binding: NewPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.NAVIGATION,
+      page: () => NavigationView(),
+      binding: NavigationBinding(),
     ),
   ];
 }

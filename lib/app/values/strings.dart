@@ -34,4 +34,63 @@ class MyStrings {
     MyIcons.logo_apple,
     MyIcons.logo_facebook,
   ];
+
+  // Home
+  static List<String> listCarouselTittle = [
+    "Black Panther: Wakanda Forever",
+    "Spider-Man No Way Home",
+    "Life of PI",
+  ];
+
+  static List<String> listCarouselDate = [
+    "On March 2, 2022",
+    "On June 5, 2022",
+    "On May 20, 2022",
+  ];
+
+  static List<String> listCarouselImage = [
+    "assets/images/blackpanther.jpg",
+    "assets/images/spidermannowayhome.png",
+    "assets/images/lifeofpi.jpg",
+  ];
+
+  static final List listKategoriHomePage = [
+    "Trending",
+    "Art",
+    "Gaming",
+    "Culture",
+    "Video",
+    "Animation",
+    "Image",
+  ];
+
+  static List<String> listMostPopularImage = [
+    "assets/images/blackpanther.jpg",
+    "assets/images/spidermannowayhome.png",
+    "assets/images/lifeofpi.jpg",
+  ];
+  static List<String> listMostPopularTittle = [
+    "Black Panther: Wakanda Forever",
+    "Spider-Man No Way Home",
+    "Life of PI",
+  ];
+  static List<String> listMostPopularKategori = [
+    "Action",
+    "Action",
+    "Drama",
+  ];
+
+  // Navigation
+  static List<String> listIconNavigation = [
+    "assets/icons/home.png",
+    "assets/icons/search.png",
+    "assets/icons/download(1).png",
+    "assets/icons/person.png",
+  ];
+  static List<String> listIconNavigationLabel = [
+    "Home",
+    "Search",
+    "Download",
+    "Profile",
+  ];
 }

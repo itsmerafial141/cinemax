@@ -16,6 +16,7 @@ dependencies:
   splash_screen_view: ^3.0.0
   email_validator: ^2.0.1
   lottie: ^1.2.2
+  carousel_slider: ^4.0.0
 
 dev_dependencies: 
   flutter_lints: ^1.0.0
