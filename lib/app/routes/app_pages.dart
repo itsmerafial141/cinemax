@@ -4,6 +4,8 @@ import 'package:cinemax/app/modules/download/bindings/download_binding.dart';
 import 'package:cinemax/app/modules/download/views/download_view.dart';
 import 'package:cinemax/app/modules/navigation/bindings/navigation_binding.dart';
 import 'package:cinemax/app/modules/navigation/views/navigation_view.dart';
+import 'package:cinemax/app/modules/profile/bindings/profile_binding.dart';
+import 'package:cinemax/app/modules/profile/views/profile_view.dart';
 import 'package:cinemax/app/modules/search/bindings/search_binding.dart';
 import 'package:cinemax/app/modules/search/views/search_view.dart';
 
@@ -112,6 +114,11 @@ class AppPages {
       name: _Paths.DOWNLOAD,
       page: () => DownloadView(),
       binding: DownloadBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => ProfileView(),
+      binding: ProfileBinding(),
     ),
   ];
 }
