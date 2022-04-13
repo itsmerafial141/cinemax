@@ -165,33 +165,36 @@ class SignupView extends GetView<SignupController> {
                     SizedBox(
                       width: 10,
                     ),
-                    RichText(
-                      text: TextSpan(
-                        style: TextStyle(
-                          fontSize: MyStyles.H6,
-                          fontFamily: MyStyles.Medium,
-                          color: MyColors.grey,
+                    Container(
+                      width: Get.width*0.75,
+                      child: RichText(
+                        text: TextSpan(
+                          style: TextStyle(
+                            fontSize: MyStyles.H6,
+                            fontFamily: MyStyles.Medium,
+                            color: MyColors.grey,
+                          ),
+                          children: <TextSpan>[
+                            TextSpan(text: "I agree to the "),
+                            TextSpan(
+                              text: "Terms and Services",
+                              style: TextStyle(
+                                fontSize: MyStyles.H6,
+                                fontFamily: MyStyles.Medium,
+                                color: MyColors.blueAccent,
+                              ),
+                            ),
+                            TextSpan(text: " and "),
+                            TextSpan(
+                              text: "Privacy Policy",
+                              style: TextStyle(
+                                fontSize: MyStyles.H6,
+                                fontFamily: MyStyles.Medium,
+                                color: MyColors.blueAccent,
+                              ),
+                            ),
+                          ],
                         ),
-                        children: <TextSpan>[
-                          TextSpan(text: "I agree to the "),
-                          TextSpan(
-                            text: "Terms and Services",
-                            style: TextStyle(
-                              fontSize: MyStyles.H6,
-                              fontFamily: MyStyles.Medium,
-                              color: MyColors.blueAccent,
-                            ),
-                          ),
-                          TextSpan(text: " and "),
-                          TextSpan(
-                            text: "Privacy Policy",
-                            style: TextStyle(
-                              fontSize: MyStyles.H6,
-                              fontFamily: MyStyles.Medium,
-                              color: MyColors.blueAccent,
-                            ),
-                          ),
-                        ],
                       ),
                     ),
                   ],

@@ -150,7 +150,7 @@ class LoginView extends GetView<LoginController> {
                 message: "Login",
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.offAllNamed(AppPages.INITIAL_HM);
+                    Get.offAllNamed(AppPages.INITIAL_NV);
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(

@@ -14,6 +14,7 @@ import '../widgets/hp_list_kategori_widget.dart';
 class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(HomeController());
     return Scaffold(
       backgroundColor: MyColors.dark,
       body: SafeArea(
@@ -275,13 +276,6 @@ class HomeView extends GetView<HomeController> {
               ),
               Obx(
                 () => AnimatedSmoothIndicator(
-                  onDotClicked: (index) {
-                    controller.dotsCarouselController.animateToPage(
-                      index,
-                      duration: Duration(milliseconds: 1000),
-                      curve: Curves.easeInOut,
-                    );
-                  },
                   activeIndex: controller.carouselController.value,
                   count: MyStrings.listCarouselTittle.length,
                   effect: ExpandingDotsEffect(
@@ -460,103 +454,6 @@ class HomeView extends GetView<HomeController> {
                 height: Get.height * 0.2,
               ),
             ],
-          ),
-        ),
-      ),
-      bottomNavigationBar: Container(
-        color: MyColors.dark,
-        height: Get.height * 0.1,
-        margin: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: List.generate(
-            4,
-            (index) {
-              return Obx(
-                () => Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: InkWell(
-                    onTap: () {
-                      controller.currentNavigation.value = index;
-                    },
-                    borderRadius: BorderRadius.circular(10),
-                    child: AnimatedContainer(
-                      curve: Curves.easeInOut,
-                      duration: Duration(milliseconds: 200),
-                      width: controller.currentNavigation.value == index
-                          ? controller
-                                  .textSize(
-                                    MyStrings.listIconNavigationLabel[index],
-                                    TextStyle(
-                                      fontFamily: MyStyles.Medium,
-                                      fontSize: MyStyles.H6,
-                                      color: MyColors.blueAccent,
-                                    ),
-                                  )
-                                  .width +
-                              50 +
-                              10
-                          : 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        color: controller.currentNavigation.value == index
-                            ? MyColors.soft
-                            : MyColors.dark,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Image(
-                            color: controller.currentNavigation.value == index
-                                ? MyColors.blueAccent
-                                : MyColors.grey,
-                            image: AssetImage(
-                              MyStrings.listIconNavigation[index],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          AnimatedContainer(
-                            duration: Duration(milliseconds: 200),
-                            curve: Curves.easeInOut,
-                            width: controller.currentNavigation.value == index
-                                ? controller
-                                    .textSize(
-                                      MyStrings.listIconNavigationLabel[index],
-                                      TextStyle(
-                                        fontFamily: MyStyles.Medium,
-                                        fontSize: MyStyles.H6,
-                                      ),
-                                    )
-                                    .width
-                                : 0,
-                            child: Text(
-                              MyStrings.listIconNavigationLabel[index],
-                              maxLines: 1,
-                              overflow: TextOverflow.fade,
-                              softWrap: false,
-                              style: TextStyle(
-                                fontFamily: MyStyles.Medium,
-                                fontSize: MyStyles.H6,
-                                color:
-                                    controller.currentNavigation.value == index
-                                        ? MyColors.blueAccent
-                                        : MyColors.grey,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              );
-            },
           ),
         ),
       ),

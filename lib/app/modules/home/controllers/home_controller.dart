@@ -6,20 +6,10 @@ class HomeController extends GetxController {
 
   var carouselController = 0.obs;
   var kategoriClicked = 0.obs;
-  var currentNavigation = 0.obs;
   var fieldNode = false.obs;
   var hideLabelNavigation = false.obs;
   var focusSearchNode = FocusNode();
   var dotsCarouselController = PageController();
-
-  Size textSize(String text, TextStyle style) {
-    final TextPainter textPainter = TextPainter(
-        text: TextSpan(text: text, style: style),
-        maxLines: 1,
-        textDirection: TextDirection.ltr)
-      ..layout(minWidth: 0, maxWidth: double.infinity);
-    return textPainter.size;
-  }
 
   void carouselChanged(int page) {
     carouselController.value = page;

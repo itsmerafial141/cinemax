@@ -91,81 +91,79 @@ class VerificationView extends GetView<VerificationController> {
               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    4,
-                    (index) {
-                      return Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        height: 64,
-                        width: 64,
-                        child: Obx(
-                          () => TextField(
-                            textAlign: TextAlign.center,
-                            maxLength: 1,
-                            maxLengthEnforced: true,
-                            textCapitalization: TextCapitalization.characters,
-                            controller: controller.listEditingController[index],
-                            cursorColor: controller.codeError.isTrue
-                                ? MyColors.red
-                                : MyColors.white,
-                            textAlignVertical: TextAlignVertical.center,
-                            style: TextStyle(color: MyColors.grey),
-                            onSubmitted: (_) {
-                              controller.listCodeSubmitted[index] = true;
-                            },
-                            decoration: InputDecoration(
-                              counterText: "",
-                              errorBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    BorderSide(width: 1, color: MyColors.red),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    BorderSide(width: 1, color: MyColors.red),
-                              ),
-                              errorText: controller.codeError.isTrue
-                                  ? "* Code isn't correct, please try again."
-                                  : null,
-                              errorStyle: TextStyle(
-                                fontFamily: MyStyles.Medium,
-                              ),
-                              contentPadding: EdgeInsets.symmetric(
-                                horizontal: 20,
-                                vertical: 20,
-                              ),
-                              hintText: "0",
-                              hintStyle: TextStyle(color: MyColors.grey50),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  width: 1,
-                                  color: MyColors.grey,
-                                ),
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  width: 1,
-                                  color: controller.listCodeSubmitted[index] ==
-                                          true
-                                      ? MyColors.blueAccent
-                                      : MyColors.soft,
-                                ),
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              filled: true,
-                              fillColor: MyColors.soft,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: List.generate(
+                  4,
+                  (index) {
+                    return Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      height: 64,
+                      width: 64,
+                      child: Obx(
+                        () => TextField(
+                          textAlign: TextAlign.center,
+                          maxLength: 1,
+                          maxLengthEnforced: true,
+                          textCapitalization: TextCapitalization.characters,
+                          controller: controller.listEditingController[index],
+                          cursorColor: controller.codeError.isTrue
+                              ? MyColors.red
+                              : MyColors.white,
+                          textAlignVertical: TextAlignVertical.center,
+                          style: TextStyle(color: MyColors.grey),
+                          onSubmitted: (_) {
+                            controller.listCodeSubmitted[index] = true;
+                          },
+                          decoration: InputDecoration(
+                            counterText: "",
+                            errorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide:
+                                  BorderSide(width: 1, color: MyColors.red),
                             ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide:
+                                  BorderSide(width: 1, color: MyColors.red),
+                            ),
+                            errorText: controller.codeError.isTrue
+                                ? "* Code isn't correct, please try again."
+                                : null,
+                            errorStyle: TextStyle(
+                              fontFamily: MyStyles.Medium,
+                            ),
+                            contentPadding: EdgeInsets.symmetric(
+                              horizontal: 20,
+                              vertical: 20,
+                            ),
+                            hintText: "0",
+                            hintStyle: TextStyle(color: MyColors.grey50),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                width: 1,
+                                color: MyColors.grey,
+                              ),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                width: 1,
+                                color:
+                                    controller.listCodeSubmitted[index] == true
+                                        ? MyColors.blueAccent
+                                        : MyColors.soft,
+                              ),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            filled: true,
+                            fillColor: MyColors.soft,
                           ),
                         ),
-                      );
-                    },
-                  ),
+                      ),
+                    );
+                  },
                 ),
               ),
               SizedBox(

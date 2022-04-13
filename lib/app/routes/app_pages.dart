@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import 'package:cinemax/app/modules/navigation/bindings/navigation_binding.dart';
 import 'package:cinemax/app/modules/navigation/views/navigation_view.dart';
+import 'package:cinemax/app/modules/search/bindings/search_binding.dart';
+import 'package:cinemax/app/modules/search/views/search_view.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
@@ -41,6 +43,7 @@ class AppPages {
   static const INITIAL_RP = Routes.RESET_PASSWORD;
   static const INITIAL_VR = Routes.VERIFICATION;
   static const INITIAL_NP = Routes.NEW_PASSWORD;
+  static const INITIAL_NV = Routes.NAVIGATION;
 
   static final routes = [
     GetPage(
@@ -97,6 +100,11 @@ class AppPages {
       name: _Paths.NAVIGATION,
       page: () => NavigationView(),
       binding: NavigationBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEARCH,
+      page: () => SearchView(),
+      binding: SearchBinding(),
     ),
   ];
 }
