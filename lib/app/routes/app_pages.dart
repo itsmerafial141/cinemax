@@ -48,6 +48,9 @@ class AppPages {
   static const INITIAL_VR = Routes.VERIFICATION;
   static const INITIAL_NP = Routes.NEW_PASSWORD;
   static const INITIAL_NV = Routes.NAVIGATION;
+  static const INITIAL_SR = Routes.SEARCH;
+  static const INITIAL_Dw = Routes.DOWNLOAD;
+  static const INITIAL_PR = Routes.PROFILE;
 
   static final routes = [
     GetPage(

@@ -1,3 +1,4 @@
+import 'package:cinemax/app/values/colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -8,6 +9,7 @@ class DownloadView extends GetView<DownloadController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColors.dark,
       appBar: AppBar(
         title: Text('DownloadView'),
         centerTitle: true,

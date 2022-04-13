@@ -1,4 +1,7 @@
+import 'package:cinemax/app/modules/download/views/download_view.dart';
 import 'package:cinemax/app/modules/home/views/home_view.dart';
+import 'package:cinemax/app/modules/profile/views/profile_view.dart';
+import 'package:cinemax/app/modules/search/views/search_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -18,9 +21,9 @@ class NavigationView extends GetView<NavigationController> {
           index: controller.currentNavigation.value,
           children: [
             HomeView(),
-            HomeView(),
-            HomeView(),
-            HomeView(),
+            SearchView(),
+            DownloadView(),
+            ProfileView(),
           ],
         ),
       ),
