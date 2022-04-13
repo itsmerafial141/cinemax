@@ -18,6 +18,7 @@ abstract class Routes {
   static const NEW_PASSWORD = _Paths.NEW_PASSWORD;
   static const NAVIGATION = _Paths.NAVIGATION;
   static const SEARCH = _Paths.SEARCH;
+  static const DOWNLOAD = _Paths.DOWNLOAD;
 }
 
 abstract class _Paths {
@@ -33,4 +34,5 @@ abstract class _Paths {
   static const NEW_PASSWORD = '/new-password';
   static const NAVIGATION = '/navigation';
   static const SEARCH = '/search';
+  static const DOWNLOAD = '/download';
 }

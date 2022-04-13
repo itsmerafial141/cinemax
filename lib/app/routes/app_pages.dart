@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import 'package:cinemax/app/modules/download/bindings/download_binding.dart';
+import 'package:cinemax/app/modules/download/views/download_view.dart';
 import 'package:cinemax/app/modules/navigation/bindings/navigation_binding.dart';
 import 'package:cinemax/app/modules/navigation/views/navigation_view.dart';
 import 'package:cinemax/app/modules/search/bindings/search_binding.dart';
@@ -105,6 +107,11 @@ class AppPages {
       name: _Paths.SEARCH,
       page: () => SearchView(),
       binding: SearchBinding(),
+    ),
+    GetPage(
+      name: _Paths.DOWNLOAD,
+      page: () => DownloadView(),
+      binding: DownloadBinding(),
     ),
   ];
 }
