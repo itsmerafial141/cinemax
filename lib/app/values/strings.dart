@@ -55,13 +55,10 @@ class MyStrings {
   ];
 
   static final List listKategoriHomePage = [
-    "Trending",
-    "Art",
-    "Gaming",
-    "Culture",
-    "Video",
+    "All",
+    "Comedy",
     "Animation",
-    "Image",
+    "Dokumentation",
   ];
 
   static List<String> listMostPopularImage = [
