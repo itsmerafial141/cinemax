@@ -22,18 +22,11 @@ class SearchController extends GetxController {
       "Alamsyah",
     ];
     for (int x = 0; x < actorName.length; x++) {
-      if (getNameFromSearch.value == actorName[x].toLowerCase()) {
-        print("there is actor------------");
-        theresAreActorName.value == true;
-        print(theresAreActorName.value);
-        print(actorName[x]);
-        print(x);
+      if (getNameFromSearch.value.toLowerCase() == actorName[x].toLowerCase()) {
+        theresAreActorName.value = true;
         break;
       } else {
-        theresAreActorName.value == false;
-        print(theresAreActorName.value);
-        print(actorName[x]);
-        print("there is no actor");
+        theresAreActorName.value = false;
       }
     }
   }
