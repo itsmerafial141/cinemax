@@ -1,10 +1,7 @@
-import 'dart:ui';
-
 import 'package:cinemax/app/values/colors.dart';
 import 'package:cinemax/app/values/strings.dart';
 import 'package:cinemax/app/values/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'package:get/get.dart';
 
@@ -36,6 +33,7 @@ class SearchView extends GetView<SearchController> {
                     style: TextStyle(color: MyColors.grey),
                     onChanged: (value) {
                       controller.searchCondition(value);
+                      controller.checkActorName();
                     },
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.symmetric(
@@ -84,45 +82,175 @@ class SearchView extends GetView<SearchController> {
                 () {
                   return controller.isFilled.value == true
                       ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              margin: EdgeInsets.symmetric(horizontal: 20),
-                              child: Text(
-                                "Today",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontFamily: MyStyles.SemiBold,
-                                  fontSize: MyStyles.H4,
-                                  color: MyColors.white,
-                                ),
-                              ),
-                            ),
+                            controller.theresAreActorName.isTrue
+                                ? Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        alignment: Alignment.centerLeft,
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal: 20),
+                                        child: Text(
+                                          "Today",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontFamily: MyStyles.SemiBold,
+                                            fontSize: MyStyles.H4,
+                                            color: MyColors.white,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                        child: Row(
+                                          children: [
+                                            SizedBox(
+                                              width: 5,
+                                            ),
+                                            Row(
+                                              children: List.generate(
+                                                4,
+                                                (index) {
+                                                  return Column(
+                                                    children: [
+                                                      Container(
+                                                        height: 64,
+                                                        width: 64,
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                          horizontal: 15,
+                                                        ),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                            Get.width,
+                                                          ),
+                                                          color: MyColors
+                                                              .blueAccent,
+                                                        ),
+                                                      ),
+                                                      SizedBox(
+                                                        height: 10,
+                                                      ),
+                                                      Container(
+                                                        width: 80,
+                                                        child: RichText(
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
+                                                          softWrap: false,
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          text: TextSpan(
+                                                            style: TextStyle(
+                                                              fontSize:
+                                                                  MyStyles.H6,
+                                                              fontFamily:
+                                                                  MyStyles
+                                                                      .SemiBold,
+                                                              color:
+                                                                  MyColors.grey,
+                                                            ),
+                                                            children: <
+                                                                TextSpan>[
+                                                              TextSpan(
+                                                                text: controller
+                                                                    .getNameFromSearch
+                                                                    .value,
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize:
+                                                                      MyStyles
+                                                                          .H6,
+                                                                  fontFamily:
+                                                                      MyStyles
+                                                                          .SemiBold,
+                                                                  color: MyColors
+                                                                      .white,
+                                                                ),
+                                                              ),
+                                                              TextSpan(
+                                                                text: " " +
+                                                                    controller
+                                                                        .getRandomString(
+                                                                            4),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 5,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 20,
+                                      ),
+                                      Container(
+                                        alignment: Alignment.centerLeft,
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal: 20),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Text(
+                                              "Movie Related",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontFamily: MyStyles.SemiBold,
+                                                fontSize: MyStyles.H4,
+                                                color: MyColors.white,
+                                              ),
+                                            ),
+                                            Spacer(),
+                                            Tooltip(
+                                              message: "See All Movies Related",
+                                              child: InkWell(
+                                                onTap: () {},
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                child: Container(
+                                                  padding: EdgeInsets.symmetric(
+                                                    horizontal: 10,
+                                                    vertical: 5,
+                                                  ),
+                                                  child: Text(
+                                                    "See All",
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          MyStyles.Medium,
+                                                      fontSize: MyStyles.H5,
+                                                      color:
+                                                          MyColors.blueAccent,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                : Container(),
                             SizedBox(
-                              height: 10,
+                              height: 20,
                             ),
-                            // StaggeredGrid.count(
-                            //   crossAxisCount: 1,
-                            //   axisDirection: AxisDirection.r,
-                            //   children: List.generate(
-                            //     5,
-                            //     (index) {
-                            //       return Column(
-                            //         children: [
-                            //           Container(
-                            //             height: 64,
-                            //             width: 64,
-                            //             decoration: BoxDecoration(
-                            //               borderRadius: BorderRadius.circular(
-                            //                 Get.width,
-                            //               ),
-                            //             ),
-                            //           ),
-                            //         ],
-                            //       );
-                            //     },
-                            //   ),
-                            // ),
                             ListView.separated(
                               shrinkWrap: true,
                               physics: NeverScrollableScrollPhysics(),
