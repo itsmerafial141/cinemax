@@ -79,7 +79,9 @@ class HomeView extends GetView<HomeController> {
                     Tooltip(
                       message: "Favorite",
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(AppPages.INITIAL_WL);
+                        },
                         borderRadius: BorderRadius.circular(10),
                         child: Container(
                           height: 32,

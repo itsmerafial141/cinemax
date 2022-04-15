@@ -30,6 +30,8 @@ import '../modules/splash_screen/bindings/splash_screen_binding.dart';
 import '../modules/splash_screen/views/splash_screen_view.dart';
 import '../modules/verification/bindings/verification_binding.dart';
 import '../modules/verification/views/verification_view.dart';
+import '../modules/wishlist/bindings/wishlist_binding.dart';
+import '../modules/wishlist/views/wishlist_view.dart';
 
 // ignore_for_file: constant_identifier_names
 
@@ -53,6 +55,7 @@ class AppPages {
   static const INITIAL_Dw = Routes.DOWNLOAD;
   static const INITIAL_PR = Routes.PROFILE;
   static const INITIAL_MD = Routes.MOVIE_DETAIL;
+  static const INITIAL_WL = Routes.WISHLIST;
 
   static final routes = [
     GetPage(
@@ -129,6 +132,11 @@ class AppPages {
       name: _Paths.MOVIE_DETAIL,
       page: () => MovieDetailView(),
       binding: MovieDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.WISHLIST,
+      page: () => WishlistView(),
+      binding: WishlistBinding(),
     ),
   ];
 }
