@@ -20,6 +20,7 @@ abstract class Routes {
   static const SEARCH = _Paths.SEARCH;
   static const DOWNLOAD = _Paths.DOWNLOAD;
   static const PROFILE = _Paths.PROFILE;
+  static const MOVIE_DETAIL = _Paths.MOVIE_DETAIL;
 }
 
 abstract class _Paths {
@@ -37,4 +38,5 @@ abstract class _Paths {
   static const SEARCH = '/search';
   static const DOWNLOAD = '/download';
   static const PROFILE = '/profile';
+  static const MOVIE_DETAIL = '/movie-detail';
 }

@@ -44,4 +44,7 @@ class MyIcons {
   static String logo_google = "assets/icons/Icon - Google.png";
   static String logo_apple = "assets/icons/Icon - Apple.png";
   static String logo_facebook = "assets/icons/Icon - Facebook.png";
+  static String logo_instagram = "assets/icons/instagram 1.png";
+  static String logo_messenger = "assets/icons/messenger (2) 1.png";
+  static String logo_send = "assets/icons/send (1) 1.png";
 }

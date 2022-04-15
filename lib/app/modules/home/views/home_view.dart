@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cinemax/app/routes/app_pages.dart';
 import 'package:cinemax/app/values/colors.dart';
 import 'package:cinemax/app/values/icons.dart';
 import 'package:cinemax/app/values/strings.dart';
@@ -368,7 +369,12 @@ class HomeView extends GetView<HomeController> {
                             child: Tooltip(
                               message: MyStrings.listMostPopularTittle[index],
                               child: InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Get.toNamed(
+                                    AppPages.INITIAL_MD,
+                                    arguments: index,
+                                  );
+                                },
                                 borderRadius: BorderRadius.circular(20),
                                 child: Column(
                                   children: [

@@ -1,14 +1,7 @@
 import 'package:get/get.dart';
 
-import 'package:cinemax/app/modules/download/bindings/download_binding.dart';
-import 'package:cinemax/app/modules/download/views/download_view.dart';
-import 'package:cinemax/app/modules/navigation/bindings/navigation_binding.dart';
-import 'package:cinemax/app/modules/navigation/views/navigation_view.dart';
-import 'package:cinemax/app/modules/profile/bindings/profile_binding.dart';
-import 'package:cinemax/app/modules/profile/views/profile_view.dart';
-import 'package:cinemax/app/modules/search/bindings/search_binding.dart';
-import 'package:cinemax/app/modules/search/views/search_view.dart';
-
+import '../modules/download/bindings/download_binding.dart';
+import '../modules/download/views/download_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/homepage/bindings/homepage_binding.dart';
@@ -17,12 +10,20 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/login_sign/bindings/login_sign_binding.dart';
 import '../modules/login_sign/views/login_sign_view.dart';
+import '../modules/movie_detail/bindings/movie_detail_binding.dart';
+import '../modules/movie_detail/views/movie_detail_view.dart';
+import '../modules/navigation/bindings/navigation_binding.dart';
+import '../modules/navigation/views/navigation_view.dart';
 import '../modules/new_password/bindings/new_password_binding.dart';
 import '../modules/new_password/views/new_password_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
 import '../modules/reset_password/bindings/reset_password_binding.dart';
 import '../modules/reset_password/views/reset_password_view.dart';
+import '../modules/search/bindings/search_binding.dart';
+import '../modules/search/views/search_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
 import '../modules/signup/views/signup_view.dart';
 import '../modules/splash_screen/bindings/splash_screen_binding.dart';
@@ -51,6 +52,7 @@ class AppPages {
   static const INITIAL_SR = Routes.SEARCH;
   static const INITIAL_Dw = Routes.DOWNLOAD;
   static const INITIAL_PR = Routes.PROFILE;
+  static const INITIAL_MD = Routes.MOVIE_DETAIL;
 
   static final routes = [
     GetPage(
@@ -122,6 +124,11 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.MOVIE_DETAIL,
+      page: () => MovieDetailView(),
+      binding: MovieDetailBinding(),
     ),
   ];
 }

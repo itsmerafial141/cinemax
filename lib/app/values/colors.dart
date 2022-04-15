@@ -4,6 +4,8 @@ class MyColors {
   // Primary Colors
   static Color dark = Color.fromRGBO(31, 29, 43, 1);
   static Color soft = Color.fromRGBO(37, 40, 54, 1);
+  static Color soft50 = Color.fromRGBO(37, 40, 54, 0.5);
+  static Color soft20 = Color.fromRGBO(37, 40, 54, 0.2);
   static Color blueAccent = Color.fromRGBO(18, 205, 217, 1);
   static Color blueAccent50 = Color.fromRGBO(18, 205, 217, 0.5);
 
@@ -25,10 +27,17 @@ class MyColors {
   static Color blueFacebook = Color.fromRGBO(66, 103, 178, 1);
 
   // Login Signup
-
   static List<Color> loginSignListImageButtonColor = [
     white,
     soft,
     blueFacebook
+  ];
+
+  // Movie Detail
+  static List<Color> shareListImageButtonColor = [
+    blueFacebook,
+    orange,
+    blueAccent,
+    dark,
   ];
 }

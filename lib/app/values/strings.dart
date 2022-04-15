@@ -90,4 +90,18 @@ class MyStrings {
     "Download",
     "Profile",
   ];
+
+  // Detail Movie
+  static List<String> shareListImageButton = [
+    MyIcons.logo_facebook,
+    MyIcons.logo_instagram,
+    MyIcons.logo_messenger,
+    MyIcons.logo_send,
+  ];
+  static List<String> shareListToolTipMessage = [
+    "Facebook",
+    "Instagram",
+    "Messenger",
+    "Send",
+  ];
 }
