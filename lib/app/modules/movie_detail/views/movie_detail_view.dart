@@ -14,7 +14,6 @@ import '../widgets/mdt_custom_button_widget.dart';
 class MovieDetailView extends GetView<MovieDetailController> {
   @override
   Widget build(BuildContext context) {
-    var index = Get.arguments;
     return Scaffold(
       backgroundColor: MyColors.dark,
       body: SingleChildScrollView(
@@ -25,7 +24,7 @@ class MovieDetailView extends GetView<MovieDetailController> {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                    MyStrings.listMostPopularImage[index],
+                    MyStrings.listMostPopularImage[controller.index],
                   ),
                 ),
               ),
@@ -79,7 +78,7 @@ class MovieDetailView extends GetView<MovieDetailController> {
                             width: Get.width * 0.5,
                             alignment: Alignment.center,
                             child: Text(
-                              MyStrings.listMostPopularTittle[index],
+                              MyStrings.listMostPopularTittle[controller.index],
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               softWrap: false,
@@ -127,7 +126,7 @@ class MovieDetailView extends GetView<MovieDetailController> {
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(
-                            MyStrings.listMostPopularImage[index],
+                            MyStrings.listMostPopularImage[controller.index],
                           ),
                         ),
                       ),

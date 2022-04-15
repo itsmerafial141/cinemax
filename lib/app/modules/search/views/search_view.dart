@@ -97,7 +97,7 @@ class SearchView extends GetView<SearchController> {
                                         margin: EdgeInsets.symmetric(
                                             horizontal: 20),
                                         child: Text(
-                                          "Today",
+                                          "Actors",
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             fontFamily: MyStyles.SemiBold,

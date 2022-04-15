@@ -1,3 +1,4 @@
+import 'package:cinemax/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -99,7 +100,9 @@ class SRCFilledScreen extends StatelessWidget {
                       child: Tooltip(
                         message: MyStrings.listMostPopularTittle[index],
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed(AppPages.INITIAL_MD, arguments: index);
+                          },
                           borderRadius: BorderRadius.circular(20),
                           child: Column(
                             children: [
