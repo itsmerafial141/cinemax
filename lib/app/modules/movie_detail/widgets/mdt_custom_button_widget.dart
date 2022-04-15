@@ -23,7 +23,8 @@ class MDTCustomButtonWidget extends StatelessWidget {
         onTap: () {},
         borderRadius: BorderRadius.circular(Get.width),
         child: Container(
-          padding: EdgeInsets.all(20),
+          height: Get.width * 0.15,
+          width: Get.width * 0.15,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(Get.width),
             color: color,

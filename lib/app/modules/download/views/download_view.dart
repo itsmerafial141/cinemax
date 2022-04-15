@@ -198,7 +198,7 @@ class DownloadView extends GetView<DownloadController> {
                                     height: 5,
                                   ),
                                   Container(
-                                    width: Get.width * 0.5,
+                                    width: Get.width * 0.4,
                                     child: Text(
                                       MyStrings.listMostPopularTittle[index],
                                       overflow: TextOverflow.ellipsis,

@@ -111,7 +111,7 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                     height: 10,
                   ),
                   Container(
-                    width: Get.width * 0.6,
+                    width: Get.width * 0.5,
                     child: Text(
                       MyStrings.listMostPopularTittle[index],
                       textAlign: TextAlign.start,
