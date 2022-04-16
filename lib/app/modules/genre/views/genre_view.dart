@@ -140,12 +140,18 @@ class GenreView extends GetView<GenreController> {
                                       SizedBox(
                                         width: 10,
                                       ),
-                                      Text(
-                                        MyStrings.genreListTittle[index],
-                                        style: TextStyle(
-                                          fontFamily: MyStyles.Medium,
-                                          fontSize: MyStyles.H6,
-                                          color: MyColors.white,
+                                      Container(
+                                        width: Get.width*0.15,
+                                        child: Text(
+                                          MyStrings.genreListTittle[index],
+                                          overflow: TextOverflow.ellipsis,
+                                          softWrap: false,
+                                          maxLines: 2,
+                                          style: TextStyle(
+                                            fontFamily: MyStyles.Medium,
+                                            fontSize: MyStyles.H6,
+                                            color: MyColors.white,
+                                          ),
                                         ),
                                       )
                                     ],
