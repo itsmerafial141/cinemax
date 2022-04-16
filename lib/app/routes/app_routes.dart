@@ -22,6 +22,7 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const MOVIE_DETAIL = _Paths.MOVIE_DETAIL;
   static const WISHLIST = _Paths.WISHLIST;
+  static const GENRE = _Paths.GENRE;
 }
 
 abstract class _Paths {
@@ -41,4 +42,5 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const MOVIE_DETAIL = '/movie-detail';
   static const WISHLIST = '/wishlist';
+  static const GENRE = '/genre';
 }

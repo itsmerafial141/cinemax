@@ -104,4 +104,26 @@ class MyStrings {
     "Messenger",
     "Send",
   ];
+
+  // Genre
+  static List<String> genreListTittle = [
+    "Action",
+    "Horror",
+    "Fantasy",
+    "Anime",
+    "Romance",
+    "Sci-fi",
+    "Comedy",
+    "Adventures",
+  ];
+  static List<String> genreListImage = [
+    "assets/images/blackpanther.jpg",
+    "assets/images/spidermannowayhome.png",
+    "assets/images/lifeofpi.jpg",
+    "assets/images/anime.jpg",
+    "assets/images/romance.jpg",
+    "assets/images/Iron-Man-3-Poster-Watermark-550x8151.jpg.jpg",
+    "assets/images/comedy.jpg",
+    "assets/images/THE-CHRONICLES-OF-NARNIA-Film-Film-Seni-Cetak-Sutra-Poster-Home-Dinding-Dekorasi-24x36inch.png_.jpg",
+  ];
 }

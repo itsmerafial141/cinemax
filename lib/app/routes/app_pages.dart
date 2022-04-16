@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
 
+import 'package:cinemax/app/modules/genre/bindings/genre_binding.dart';
+import 'package:cinemax/app/modules/genre/views/genre_view.dart';
+
 import '../modules/download/bindings/download_binding.dart';
 import '../modules/download/views/download_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -56,6 +59,7 @@ class AppPages {
   static const INITIAL_PR = Routes.PROFILE;
   static const INITIAL_MD = Routes.MOVIE_DETAIL;
   static const INITIAL_WL = Routes.WISHLIST;
+  static const INITIAL_GR = Routes.GENRE;
 
   static final routes = [
     GetPage(
@@ -137,6 +141,11 @@ class AppPages {
       name: _Paths.WISHLIST,
       page: () => WishlistView(),
       binding: WishlistBinding(),
+    ),
+    GetPage(
+      name: _Paths.GENRE,
+      page: () => GenreView(),
+      binding: GenreBinding(),
     ),
   ];
 }

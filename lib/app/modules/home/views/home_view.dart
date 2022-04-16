@@ -156,7 +156,9 @@ class HomeView extends GetView<HomeController> {
                             Tooltip(
                               message: "Options",
                               child: InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Get.toNamed(AppPages.INITIAL_GR);
+                                },
                                 borderRadius: BorderRadius.circular(Get.width),
                                 child: Image(
                                   image: AssetImage(MyIcons.filter),
