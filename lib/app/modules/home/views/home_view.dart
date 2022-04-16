@@ -31,19 +31,12 @@ class HomeView extends GetView<HomeController> {
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Tooltip(
-                      message: "Profile",
-                      child: InkWell(
-                        onTap: () {},
+                    Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(Get.width),
-                        child: Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(Get.width),
-                            color: MyColors.blueAccent,
-                          ),
-                        ),
+                        color: MyColors.blueAccent,
                       ),
                     ),
                     SizedBox(

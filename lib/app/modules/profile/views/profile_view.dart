@@ -60,60 +60,70 @@ class ProfileView extends GetView<ProfileController> {
                     SizedBox(
                       width: 10,
                     ),
-                    Container(
-                      width: Get.width * 0.5,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Rafial",
-                            textAlign: TextAlign.center,
-                            overflow: TextOverflow.ellipsis,
-                            softWrap: false,
-                            maxLines: 1,
-                            style: TextStyle(
-                              fontFamily: MyStyles.SemiBold,
-                              fontSize: MyStyles.H4,
-                              color: MyColors.white,
+                    Expanded(
+                      flex: 4,
+                      child: Container(
+                        width: Get.width * 0.5,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Rafial",
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
+                              softWrap: false,
+                              maxLines: 1,
+                              style: TextStyle(
+                                fontFamily: MyStyles.SemiBold,
+                                fontSize: MyStyles.H4,
+                                color: MyColors.white,
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "rfitraalamsyah@gmail.com",
-                            textAlign: TextAlign.center,
-                            overflow: TextOverflow.ellipsis,
-                            softWrap: false,
-                            maxLines: 1,
-                            style: TextStyle(
-                              fontFamily: MyStyles.Medium,
-                              fontSize: MyStyles.H5,
-                              color: MyColors.grey,
+                            SizedBox(
+                              height: 10,
                             ),
-                          ),
-                        ],
+                            Text(
+                              "rfitraalamsyah@gmail.com",
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
+                              softWrap: false,
+                              maxLines: 1,
+                              style: TextStyle(
+                                fontFamily: MyStyles.Medium,
+                                fontSize: MyStyles.H5,
+                                color: MyColors.grey,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Spacer(),
-                    Tooltip(
-                      message: "Edit Profile",
-                      child: InkWell(
-                        onTap: () {},
-                        borderRadius: BorderRadius.circular(10),
-                        child: Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        child: Tooltip(
+                          message: "Edit Profile",
+                          child: InkWell(
+                            onTap: () {},
                             borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                              width: 1,
-                              color: MyColors.blueAccent,
+                            child: Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(
+                                  width: 1,
+                                  color: MyColors.blueAccent,
+                                ),
+                              ),
+                              child: Icon(
+                                Icons.edit,
+                                size: 15,
+                                color: MyColors.blueAccent,
+                              ),
                             ),
-                          ),
-                          child: Icon(
-                            Icons.edit,
-                            size: 15,
-                            color: MyColors.blueAccent,
                           ),
                         ),
                       ),
@@ -134,50 +144,57 @@ class ProfileView extends GetView<ProfileController> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
-                    Container(
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromRGBO(255, 159, 51, 1),
-                      ),
-                      child: Image(
-                        height: 30,
-                        width: 30,
-                        image: AssetImage(MyIcons.premium),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color.fromRGBO(255, 159, 51, 1),
+                        ),
+                        child: Image(
+                          height: 30,
+                          width: 30,
+                          image: AssetImage(MyIcons.premium),
+                        ),
                       ),
                     ),
                     SizedBox(
                       width: 10,
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Premium Member",
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                            fontFamily: MyStyles.SemiBold,
-                            fontSize: MyStyles.H4,
-                            color: MyColors.white,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Container(
-                          width: Get.width * 0.65,
-                          child: Text(
-                            "New movies are coming for you, Download Now!",
+                    Expanded(
+                      flex: 6,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Premium Member",
                             textAlign: TextAlign.start,
                             style: TextStyle(
-                              fontFamily: MyStyles.Regular,
-                              fontSize: MyStyles.H5,
+                              fontFamily: MyStyles.SemiBold,
+                              fontSize: MyStyles.H4,
                               color: MyColors.white,
                             ),
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Container(
+                            // width: Get.width * 0.65,
+                            child: Text(
+                              "New movies are coming for you, Download Now!",
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                fontFamily: MyStyles.Regular,
+                                fontSize: MyStyles.H5,
+                                color: MyColors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
