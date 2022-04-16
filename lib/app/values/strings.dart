@@ -126,4 +126,36 @@ class MyStrings {
     "assets/images/comedy.jpg",
     "assets/images/THE-CHRONICLES-OF-NARNIA-Film-Film-Seni-Cetak-Sutra-Poster-Home-Dinding-Dekorasi-24x36inch.png_.jpg",
   ];
+
+  // Profile
+  static List<String> listSubMenuProfileAccountTittle = [
+    "Member",
+    "Change Password",
+  ];
+  static List<String> listSubMenuProfileAccountImage = [
+    MyIcons.profile,
+    MyIcons.padlock,
+  ];
+  static List<String> listSubMenuProfileGeneraltTittle = [
+    "Notification",
+    "Language",
+    "Country",
+    "Clear Cache",
+  ];
+  static List<String> listSubMenuProfileGeneralImage = [
+    MyIcons.notification,
+    MyIcons.globe,
+    MyIcons.finish,
+    MyIcons.trash,
+  ];
+  static List<String> listSubMenuProfileMoreTittle = [
+    "Legal and Policies",
+    "Help and Feedback",
+    "About Us",
+  ];
+  static List<String> listSubMenuProfileMoreImage = [
+    MyIcons.shield,
+    MyIcons.question,
+    MyIcons.alert,
+  ];
 }

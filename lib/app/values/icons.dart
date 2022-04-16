@@ -24,14 +24,14 @@ class MyIcons {
   static String star = "assets/icons/star.png";
   static String download_offline =
       "assets/icons/download_for_offline_black_24dp 1.png";
-  static String premium = "assets/icons/workspace_premium_black_24dp 1.png";
+  static String premium = "assets/icons/premium.png";
   static String devices = "assets/icons/devices.png";
   static String globe = "assets/icons/globe.png";
   static String notification = "assets/icons/notification (6) 1.png";
   static String trash = "assets/icons/trash-bin 1.png";
   static String settings = "assets/icons/settings.png";
   static String subttitle = "assets/icons/closed_caption.png";
-  static String shield = "assets/icons/shield (2) 1.png";
+  static String shield = "assets/icons/shield.png";
   static String person_profile = "assets/icons/person.png";
   static String hd = "assets/icons/hd.png";
   static String question = "assets/icons/question (2) 1.png";
