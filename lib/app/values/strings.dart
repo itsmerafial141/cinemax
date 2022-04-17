@@ -158,4 +158,25 @@ class MyStrings {
     MyIcons.question,
     MyIcons.alert,
   ];
+
+  // Genre
+  static List<String> listGenreMovie = [
+    "Movie",
+    "Serial",
+  ];
+
+  // Rating
+  static List<String> listRatingPG = [
+    "G",
+    "PG",
+    "PG-13",
+    "R",
+    "NC-17",
+  ];
+
+  // Access
+  static List<String> listAccess = [
+    "Premium",
+    "Free",
+  ];
 }

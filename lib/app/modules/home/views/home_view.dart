@@ -325,7 +325,9 @@ class HomeView extends GetView<HomeController> {
                     Tooltip(
                       message: "See All Movies",
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(AppPages.INITIAL_MP);
+                        },
                         borderRadius: BorderRadius.circular(10),
                         child: Container(
                           padding: EdgeInsets.symmetric(

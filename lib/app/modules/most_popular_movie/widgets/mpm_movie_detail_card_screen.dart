@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 import 'dart:math' as math;
+import 'package:cinemax/app/modules/most_popular_movie/controllers/most_popular_movie_controller.dart';
 import 'package:cinemax/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,8 +9,8 @@ import '../../../values/colors.dart';
 import '../../../values/strings.dart';
 import '../../../values/styles.dart';
 
-class SRCMovieDetailCardWidget extends StatelessWidget {
-  const SRCMovieDetailCardWidget({
+class MPMMovieDetailCardWidget extends GetView<MostPopularMovieController> {
+  const MPMMovieDetailCardWidget({
     Key? key,
     required this.index,
   }) : super(key: key);
@@ -94,11 +95,18 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                       vertical: 5,
                     ),
                     decoration: BoxDecoration(
-                      color: MyColors.orange,
+                      color: math.Random().nextInt(
+                                MyStrings.listAccess.length,
+                              ) ==
+                              0
+                          ? MyColors.orange
+                          : MyColors.blueAccent,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      "Premium",
+                      MyStrings.listAccess[math.Random().nextInt(
+                        MyStrings.listAccess.length,
+                      )],
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: MyStyles.Medium,
@@ -163,7 +171,7 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                         width: 5,
                       ),
                       Text(
-                        "148 Minutes",
+                        "${100 + math.Random().nextInt(90)} Minutes",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: MyStyles.Medium,
@@ -175,6 +183,16 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                         width: 10,
                       ),
                       Container(
+                        width: controller
+                            .textSize(
+                              "999999",
+                              TextStyle(
+                                fontFamily: MyStyles.Medium,
+                                fontSize: MyStyles.H6,
+                                color: MyColors.white,
+                              ),
+                            )
+                            .width,
                         padding: EdgeInsets.symmetric(
                           vertical: 1,
                           horizontal: 2,
@@ -214,7 +232,9 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                         width: 5,
                       ),
                       Text(
-                        "Action",
+                        MyStrings.listKategoriHomePage[math.Random().nextInt(
+                          MyStrings.listKategoriHomePage.length,
+                        )],
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: MyStyles.Medium,

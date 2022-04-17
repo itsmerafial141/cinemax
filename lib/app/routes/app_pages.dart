@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import 'package:cinemax/app/modules/genre/bindings/genre_binding.dart';
 import 'package:cinemax/app/modules/genre/views/genre_view.dart';
+import 'package:cinemax/app/modules/most_popular_movie/bindings/most_popular_movie_binding.dart';
+import 'package:cinemax/app/modules/most_popular_movie/views/most_popular_movie_view.dart';
 
 import '../modules/download/bindings/download_binding.dart';
 import '../modules/download/views/download_view.dart';
@@ -60,6 +62,7 @@ class AppPages {
   static const INITIAL_MD = Routes.MOVIE_DETAIL;
   static const INITIAL_WL = Routes.WISHLIST;
   static const INITIAL_GR = Routes.GENRE;
+  static const INITIAL_MP = Routes.MOST_POPULAR_MOVIE;
 
   static final routes = [
     GetPage(
@@ -146,6 +149,11 @@ class AppPages {
       name: _Paths.GENRE,
       page: () => GenreView(),
       binding: GenreBinding(),
+    ),
+    GetPage(
+      name: _Paths.MOST_POPULAR_MOVIE,
+      page: () => MostPopularMovieView(),
+      binding: MostPopularMovieBinding(),
     ),
   ];
 }
