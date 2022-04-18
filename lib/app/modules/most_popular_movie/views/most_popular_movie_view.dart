@@ -80,7 +80,7 @@ class MostPopularMovieView extends GetView<MostPopularMovieController> {
                     height: 20,
                   );
                 },
-                itemCount: MyStrings.listMostPopularTittle.length,
+                itemCount: MyStrings.listDataMovie.length,
               ),
             ],
           ),
