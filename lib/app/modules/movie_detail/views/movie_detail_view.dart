@@ -18,13 +18,19 @@ class MovieDetailView extends GetView<MovieDetailController> {
       backgroundColor: MyColors.dark,
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                    MyStrings.listMostPopularImage[controller.index],
+                    MyStrings.listDataMovie
+                        .where(
+                          (element) => element["id"] == controller.id[0]["id"],
+                        )
+                        .toList()[0]["image"]
+                        .toString(),
                   ),
                 ),
               ),
@@ -78,7 +84,13 @@ class MovieDetailView extends GetView<MovieDetailController> {
                             width: Get.width * 0.5,
                             alignment: Alignment.center,
                             child: Text(
-                              MyStrings.listMostPopularTittle[controller.index],
+                              MyStrings.listDataMovie
+                                  .where(
+                                    (element) =>
+                                        element["id"] == controller.id[0]["id"],
+                                  )
+                                  .toList()[0]["tittle"]
+                                  .toString(),
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               softWrap: false,
@@ -126,7 +138,13 @@ class MovieDetailView extends GetView<MovieDetailController> {
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(
-                            MyStrings.listMostPopularImage[controller.index],
+                            MyStrings.listDataMovie
+                                .where(
+                                  (element) =>
+                                      element["id"] == controller.id[0]["id"],
+                                )
+                                .toList()[0]["image"]
+                                .toString(),
                           ),
                         ),
                       ),
@@ -146,7 +164,13 @@ class MovieDetailView extends GetView<MovieDetailController> {
                           width: 5,
                         ),
                         Text(
-                          "2021",
+                          MyStrings.listDataMovie
+                              .where(
+                                (element) =>
+                                    element["id"] == controller.id[0]["id"],
+                              )
+                              .toList()[0]["release"]
+                              .toString(),
                           style: TextStyle(
                             fontFamily: MyStyles.Medium,
                             fontSize: MyStyles.H6,
@@ -173,7 +197,13 @@ class MovieDetailView extends GetView<MovieDetailController> {
                           width: 5,
                         ),
                         Text(
-                          "148 Minutes",
+                          MyStrings.listDataMovie
+                              .where(
+                                (element) =>
+                                    element["id"] == controller.id[0]["id"],
+                              )
+                              .toList()[0]["duration"]
+                              .toString(),
                           style: TextStyle(
                             fontFamily: MyStyles.Medium,
                             fontSize: MyStyles.H6,
@@ -200,7 +230,13 @@ class MovieDetailView extends GetView<MovieDetailController> {
                           width: 5,
                         ),
                         Text(
-                          "Action",
+                          MyStrings.listDataMovie
+                              .where(
+                                (element) =>
+                                    element["id"] == controller.id[0]["id"],
+                              )
+                              .toList()[0]["genre"]
+                              .toString(),
                           style: TextStyle(
                             fontFamily: MyStyles.Medium,
                             fontSize: MyStyles.H6,
@@ -233,7 +269,13 @@ class MovieDetailView extends GetView<MovieDetailController> {
                             width: 5,
                           ),
                           Text(
-                            "4.5",
+                            MyStrings.listDataMovie
+                                .where(
+                                  (element) =>
+                                      element["id"] == controller.id[0]["id"],
+                                )
+                                .toList()[0]["rate"]
+                                .toString(),
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: MyStyles.SemiBold,
@@ -261,7 +303,17 @@ class MovieDetailView extends GetView<MovieDetailController> {
                                 vertical: 15,
                               ),
                               decoration: BoxDecoration(
-                                color: MyColors.orange,
+                                color: MyStrings.listDataMovie
+                                            .where(
+                                              (element) =>
+                                                  element["id"] ==
+                                                  controller.id[0]["id"],
+                                            )
+                                            .toList()[0]["category"]
+                                            .toString() ==
+                                        "Movie"
+                                    ? MyColors.orange
+                                    : MyColors.blueAccent,
                                 borderRadius: BorderRadius.circular(Get.width),
                               ),
                               child: Row(
@@ -275,7 +327,17 @@ class MovieDetailView extends GetView<MovieDetailController> {
                                     width: 10,
                                   ),
                                   Text(
-                                    "Play",
+                                    MyStrings.listDataMovie
+                                                .where(
+                                                  (element) =>
+                                                      element["id"] ==
+                                                      controller.id[0]["id"],
+                                                )
+                                                .toList()[0]["category"]
+                                                .toString() ==
+                                            "Movie"
+                                        ? "Play"
+                                        : "Trailer",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontFamily: MyStyles.Medium,
@@ -304,7 +366,17 @@ class MovieDetailView extends GetView<MovieDetailController> {
                               ),
                               child: Icon(
                                 Icons.file_download_outlined,
-                                color: MyColors.orange,
+                                color: MyStrings.listDataMovie
+                                            .where(
+                                              (element) =>
+                                                  element["id"] ==
+                                                  controller.id[0]["id"],
+                                            )
+                                            .toList()[0]["category"]
+                                            .toString() ==
+                                        "Movie"
+                                    ? MyColors.orange
+                                    : MyColors.blueAccent,
                               ),
                             ),
                           ),
@@ -367,8 +439,13 @@ class MovieDetailView extends GetView<MovieDetailController> {
                   ),
                   children: <TextSpan>[
                     TextSpan(
-                      text:
-                          "For the first time in the cinematic history of Spider-Man, our friendly neighborhood hero's identity is revealed, bringing his Super Hero responsibilities into conflict with his normal life and putting those he cares about most at risk.",
+                      text: MyStrings.listDataMovie
+                          .where(
+                            (element) =>
+                                element["id"] == controller.id[0]["id"],
+                          )
+                          .toList()[0]["storyline"]
+                          .toString(),
                     ),
                     TextSpan(
                       text: " More",
@@ -400,74 +477,274 @@ class MovieDetailView extends GetView<MovieDetailController> {
             SizedBox(
               height: 20,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Row(
-                    children: List.generate(
-                      4,
-                      (index) {
-                        return Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10,
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.circular(Get.width),
-                                  color: MyColors.blueAccent,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Rafi Fitra Alamsyah",
-                                    style: TextStyle(
-                                      fontFamily: MyStyles.SemiBold,
-                                      fontSize: MyStyles.H5,
-                                      color: MyColors.white,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    "Directors",
-                                    style: TextStyle(
-                                      fontFamily: MyStyles.Medium,
-                                      fontSize: MyStyles.H7,
-                                      color: MyColors.grey,
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        );
-                      },
+            Container(
+              alignment: Alignment.centerLeft,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 10,
                     ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                ],
+                    Row(
+                      children: List.generate(
+                        MyStrings.listCastAndCrew
+                            .where(
+                              (element) =>
+                                  element["id_movie"] == controller.id[0]["id"],
+                            )
+                            .toList()
+                            .length,
+                        (index) {
+                          return Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10,
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.circular(Get.width),
+                                    color: MyColors.blueAccent,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      MyStrings.listCastAndCrew
+                                          .where(
+                                            (element) =>
+                                                element["id_movie"] ==
+                                                controller.id[0]["id"],
+                                          )
+                                          .toList()[index]["name"]
+                                          .toString(),
+                                      style: TextStyle(
+                                        fontFamily: MyStyles.SemiBold,
+                                        fontSize: MyStyles.H5,
+                                        color: MyColors.white,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Text(
+                                      MyStrings.listCastAndCrew
+                                          .where(
+                                            (element) =>
+                                                element["id_movie"] ==
+                                                controller.id[0]["id"],
+                                          )
+                                          .toList()[index]["position"]
+                                          .toString(),
+                                      style: TextStyle(
+                                        fontFamily: MyStyles.Medium,
+                                        fontSize: MyStyles.H7,
+                                        color: MyColors.grey,
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(
-              height: Get.height * 0.3,
+              height: 20,
             ),
+            MyStrings.listDataMovie
+                        .where(
+                          (element) => element["id"] == controller.id[0]["id"],
+                        )
+                        .toList()[0]["category"]
+                        .toString() ==
+                    "Serial"
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          "Episode",
+                          style: TextStyle(
+                            fontFamily: MyStyles.SemiBold,
+                            fontSize: MyStyles.H4,
+                            color: MyColors.white,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        child: InkWell(
+                          onTap: () {
+                            controller.seassonDropDown.toggle();
+                          },
+                          borderRadius: BorderRadius.circular(20),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 5,
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  "Season 2",
+                                  style: TextStyle(
+                                    fontFamily: MyStyles.Medium,
+                                    fontSize: MyStyles.H5,
+                                    color: MyColors.white,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Obx(
+                                  () => Icon(
+                                    controller.seassonDropDown.value == true
+                                        ? Icons.keyboard_arrow_down_rounded
+                                        : Icons.keyboard_arrow_up_rounded,
+                                    color: MyColors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 20),
+                        child: ListView.separated(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (_, index) {
+                            return Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: MyColors.soft,
+                              ),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        flex: 2,
+                                        child: Stack(
+                                          alignment: Alignment.center,
+                                          children: [
+                                            Container(
+                                              width: 121,
+                                              height: 83,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(8),
+                                                color: MyColors.grey,
+                                                image: DecorationImage(
+                                                  fit: BoxFit.cover,
+                                                  image: AssetImage(
+                                                    MyStrings
+                                                            .listMostPopularImage[
+                                                        index],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              width: 121,
+                                              height: 83,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(8),
+                                                color: Colors.black54,
+                                              ),
+                                            ),
+                                            Container(
+                                              height: 50,
+                                              width: 50,
+                                              padding: EdgeInsets.all(5),
+                                              decoration: BoxDecoration(
+                                                color: Colors.white24,
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                  Get.width,
+                                                ),
+                                              ),
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white24,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                    Get.width,
+                                                  ),
+                                                ),
+                                                child: Icon(
+                                                  Icons.play_arrow_rounded,
+                                                  color: MyColors.white,
+                                                ),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Expanded(
+                                        flex: 4,
+                                        child: Column(
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                color: MyColors.orange,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            );
+                          },
+                          separatorBuilder: (_, __) {
+                            return SizedBox(
+                              height: 10,
+                            );
+                          },
+                          itemCount: 2,
+                        ),
+                      ),
+                    ],
+                  )
+                : Container(),
           ],
         ),
       ),

@@ -184,8 +184,9 @@ class MyStrings {
   static var listDataMovie = [
     {
       "id": "MV00",
-      "access_id": "ACC0",
+      "access_id": "ACC1",
       "cast_crew": "CC00",
+      "rating": "RT1",
       "tittle": "Black Panther: Wakanda Forever",
       "image": "assets/images/blackpanther.jpg",
       "release": "2021",
@@ -198,8 +199,9 @@ class MyStrings {
     },
     {
       "id": "MV01",
-      "access_id": "ACC1",
+      "access_id": "ACC0",
       "cast_crew": "CC01",
+      "rating": "RT2",
       "tittle": "Spider-Man No Way Home",
       "image": "assets/images/spidermannowayhome.png",
       "release": "2021",
@@ -212,8 +214,9 @@ class MyStrings {
     },
     {
       "id": "MV02",
-      "access_id": "ACC2",
+      "access_id": "ACC1",
       "cast_crew": "CC02",
+      "rating": "RT3",
       "tittle": "Life Of Pi",
       "image": "assets/images/lifeofpi.jpg",
       "release": "2021",
@@ -226,14 +229,15 @@ class MyStrings {
     },
     {
       "id": "MV03",
-      "access_id": "ACC2",
+      "access_id": "ACC1",
       "cast_crew": "CC02",
+      "rating": "RT4",
       "tittle": "Life Of Pi",
-      "image": "assets/images/riverdalle.png",
+      "image": "assets/images/riverdelle.jpg",
       "release": "2021",
       "duration": "185 Minutes",
-      "genre": "Serial",
-      "category": "Drama",
+      "genre": "Drama",
+      "category": "Serial",
       "rate": "4.1",
       "storyline":
           "Originally a story from Archie Comics which started in 1941, Riverdale centres around a group of high school students who are shocked by the death of classmate, Jason Blossom. Together theyunravel the secrets of Riverdale and who",
@@ -273,6 +277,13 @@ class MyStrings {
       "name": "Erik Sommers",
       "position": "Writers",
     },
+    {
+      "id": "CC03",
+      "id_movie": "MV01",
+      "image": "assets/image/castcrew",
+      "name": "Erik Sommerwwwws",
+      "position": "Writers",
+    },
   ];
 
   static var listEpisodeMovie = [
@@ -290,6 +301,29 @@ class MyStrings {
       "duration": "1h25m",
       "synopsis":
           "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+  ];
+
+  static var listRatingMovie = [
+    {
+      "id": "RT0",
+      "name": "G",
+    },
+    {
+      "id": "RT1",
+      "name": "PG",
+    },
+    {
+      "id": "RT2",
+      "name": "PG-13",
+    },
+    {
+      "id": "RT3",
+      "name": "R",
+    },
+    {
+      "id": "RT4",
+      "name": "NC-17",
     },
   ];
 }

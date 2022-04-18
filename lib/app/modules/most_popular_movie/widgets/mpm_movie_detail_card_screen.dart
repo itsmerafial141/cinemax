@@ -27,7 +27,7 @@ class MPMMovieDetailCardWidget extends GetView<MostPopularMovieController> {
           onTap: () {
             Get.toNamed(AppPages.INITIAL_MD, arguments: [
               {
-                "index": index,
+                "id": MyStrings.listDataMovie[index]["id"],
               }
             ]);
           },
@@ -99,18 +99,26 @@ class MPMMovieDetailCardWidget extends GetView<MostPopularMovieController> {
                       vertical: 5,
                     ),
                     decoration: BoxDecoration(
-                      color: math.Random().nextInt(
-                                MyStrings.listAccess.length,
-                              ) ==
-                              0
-                          ? MyColors.orange
-                          : MyColors.blueAccent,
+                      color:
+                          MyStrings.listDataMovie[index]["access_id"] == "ACC0"
+                              ? MyColors.orange
+                              : MyColors.blueAccent,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      MyStrings.listAccess[math.Random().nextInt(
-                        MyStrings.listAccess.length,
-                      )],
+                      // MyStrings.listAccess[MyStrings.listAccess .indexWhere(
+                      //   (element) =>
+                      //       element ==
+                      //       MyStrings.listDataMovie[index]["access_id"],
+                      // )]
+                      //     .toString(),
+                      MyStrings.listAcess[MyStrings.listAcess
+                              .map((e) => e["id"])
+                              .toList()
+                              .indexOf(
+                                MyStrings.listDataMovie[index]["access_id"],
+                              )]["access"]
+                          .toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: MyStyles.Medium,
@@ -125,7 +133,7 @@ class MPMMovieDetailCardWidget extends GetView<MostPopularMovieController> {
                   Container(
                     width: Get.width * 0.5,
                     child: Text(
-                      MyStrings.listMostPopularTittle[index],
+                      MyStrings.listDataMovie[index]["tittle"].toString(),
                       textAlign: TextAlign.start,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
@@ -175,7 +183,7 @@ class MPMMovieDetailCardWidget extends GetView<MostPopularMovieController> {
                         width: 5,
                       ),
                       Text(
-                        "${100 + math.Random().nextInt(90)} Minutes",
+                        MyStrings.listDataMovie[index]["duration"].toString(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: MyStyles.Medium,
@@ -209,9 +217,13 @@ class MPMMovieDetailCardWidget extends GetView<MostPopularMovieController> {
                           ),
                         ),
                         child: Text(
-                          MyStrings.listRatingPG[math.Random().nextInt(
-                            MyStrings.listRatingPG.length,
-                          )],
+                          MyStrings.listRatingMovie[MyStrings.listRatingMovie
+                                  .map((e) => e["id"])
+                                  .toList()
+                                  .indexOf(
+                                    MyStrings.listDataMovie[index]["rating"],
+                                  )]["name"]
+                              .toString(),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: MyStyles.Medium,
@@ -236,9 +248,7 @@ class MPMMovieDetailCardWidget extends GetView<MostPopularMovieController> {
                         width: 5,
                       ),
                       Text(
-                        MyStrings.listKategoriHomePage[math.Random().nextInt(
-                          MyStrings.listKategoriHomePage.length,
-                        )],
+                        MyStrings.listDataMovie[index]["genre"].toString(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: MyStyles.Medium,
@@ -258,9 +268,7 @@ class MPMMovieDetailCardWidget extends GetView<MostPopularMovieController> {
                         width: 10,
                       ),
                       Text(
-                        MyStrings.listGenreMovie[math.Random().nextInt(
-                          MyStrings.listGenreMovie.length,
-                        )],
+                        MyStrings.listDataMovie[index]["category"].toString(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: MyStyles.Medium,
