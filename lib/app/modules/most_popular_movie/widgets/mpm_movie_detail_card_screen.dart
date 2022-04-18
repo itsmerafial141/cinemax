@@ -22,10 +22,14 @@ class MPMMovieDetailCardWidget extends GetView<MostPopularMovieController> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Tooltip(
-        message: MyStrings.listMostPopularTittle[index],
+        message: MyStrings.listDataMovie[index]["tittle"],
         child: InkWell(
           onTap: () {
-            Get.toNamed(AppPages.INITIAL_MD, arguments: index);
+            Get.toNamed(AppPages.INITIAL_MD, arguments: [
+              {
+                "index": index,
+              }
+            ]);
           },
           borderRadius: BorderRadius.circular(8),
           child: Row(
@@ -41,7 +45,7 @@ class MPMMovieDetailCardWidget extends GetView<MostPopularMovieController> {
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage(
-                          MyStrings.listMostPopularImage[index],
+                          MyStrings.listDataMovie[index]["image"].toString(),
                         ),
                       ),
                     ),
@@ -69,7 +73,7 @@ class MPMMovieDetailCardWidget extends GetView<MostPopularMovieController> {
                             width: 5,
                           ),
                           Text(
-                            "4.5",
+                            MyStrings.listDataMovie[index]["rate"].toString(),
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: MyStyles.SemiBold,

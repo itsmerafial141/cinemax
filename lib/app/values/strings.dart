@@ -179,4 +179,117 @@ class MyStrings {
     "Premium",
     "Free",
   ];
+
+  // List data movie
+  static var listDataMovie = [
+    {
+      "id": "MV00",
+      "access_id": "ACC0",
+      "cast_crew": "CC00",
+      "tittle": "Black Panther: Wakanda Forever",
+      "image": "assets/images/blackpanther.jpg",
+      "release": "2021",
+      "duration": "148 Minutes",
+      "genre": "Action",
+      "category": "Movie",
+      "rate": "4.8",
+      "storyline":
+          "Originally a story from Archie Comics which started in 1941, Riverdale centres around a group of high school students who are shocked by the death of classmate, Jason Blossom. Together theyunravel the secrets of Riverdale and who",
+    },
+    {
+      "id": "MV01",
+      "access_id": "ACC1",
+      "cast_crew": "CC01",
+      "tittle": "Spider-Man No Way Home",
+      "image": "assets/images/spidermannowayhome.png",
+      "release": "2021",
+      "duration": "162 Minutes",
+      "genre": "Action",
+      "category": "Movie",
+      "rate": "4.9",
+      "storyline":
+          "Originally a story from Archie Comics which started in 1941, Riverdale centres around a group of high school students who are shocked by the death of classmate, Jason Blossom. Together theyunravel the secrets of Riverdale and who",
+    },
+    {
+      "id": "MV02",
+      "access_id": "ACC2",
+      "cast_crew": "CC02",
+      "tittle": "Life Of Pi",
+      "image": "assets/images/lifeofpi.jpg",
+      "release": "2021",
+      "duration": "185 Minutes",
+      "genre": "Drama",
+      "category": "Movie",
+      "rate": "4.2",
+      "storyline":
+          "Originally a story from Archie Comics which started in 1941, Riverdale centres around a group of high school students who are shocked by the death of classmate, Jason Blossom. Together theyunravel the secrets of Riverdale and who",
+    },
+    {
+      "id": "MV03",
+      "access_id": "ACC2",
+      "cast_crew": "CC02",
+      "tittle": "Life Of Pi",
+      "image": "assets/images/riverdalle.png",
+      "release": "2021",
+      "duration": "185 Minutes",
+      "genre": "Serial",
+      "category": "Drama",
+      "rate": "4.1",
+      "storyline":
+          "Originally a story from Archie Comics which started in 1941, Riverdale centres around a group of high school students who are shocked by the death of classmate, Jason Blossom. Together theyunravel the secrets of Riverdale and who",
+    },
+  ];
+
+  static var listAcess = [
+    {
+      "id": "ACC0",
+      "access": "Premium",
+    },
+    {
+      "id": "ACC1",
+      "access": "Free",
+    },
+  ];
+
+  static var listCastAndCrew = [
+    {
+      "id": "CC000",
+      "id_movie": "MV00",
+      "image": "assets/image/castcrew",
+      "name": "Jon Watts",
+      "position": "Directors",
+    },
+    {
+      "id": "CC01",
+      "id_movie": "MV00",
+      "image": "assets/image/castcrew",
+      "name": "Chris McKenna",
+      "position": "Writers",
+    },
+    {
+      "id": "CC02",
+      "id_movie": "MV00",
+      "image": "assets/image/castcrew",
+      "name": "Erik Sommers",
+      "position": "Writers",
+    },
+  ];
+
+  static var listEpisodeMovie = [
+    {
+      "id": "EPS00",
+      "id_movie": "MV03",
+      "duration": "1h30m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+    {
+      "id": "EPS01",
+      "id_movie": "MV03",
+      "image": "assets/images/episode",
+      "duration": "1h25m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+  ];
 }
