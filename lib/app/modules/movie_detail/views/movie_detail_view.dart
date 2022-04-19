@@ -633,114 +633,185 @@ class MovieDetailView extends GetView<MovieDetailController> {
                           ),
                         ),
                       ),
+                      Obx(
+                        () => controller.seassonDropDown.isTrue
+                            ? Container(
+                                margin: EdgeInsets.symmetric(horizontal: 20),
+                                child: ListView.separated(
+                                  shrinkWrap: true,
+                                  physics: NeverScrollableScrollPhysics(),
+                                  itemBuilder: (_, index) {
+                                    return Container(
+                                      padding: EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: MyColors.soft,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Expanded(
+                                                flex: 2,
+                                                child: Stack(
+                                                  alignment: Alignment.center,
+                                                  children: [
+                                                    Container(
+                                                      width: 121,
+                                                      height: 83,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                        color: MyColors.grey,
+                                                        image: DecorationImage(
+                                                          fit: BoxFit.cover,
+                                                          image: AssetImage(
+                                                            MyStrings
+                                                                    .listMostPopularImage[
+                                                                index],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: 121,
+                                                      height: 83,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                        color: Colors.black54,
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      height: 50,
+                                                      width: 50,
+                                                      padding:
+                                                          EdgeInsets.all(5),
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.white24,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(
+                                                          Get.width,
+                                                        ),
+                                                      ),
+                                                      child: Container(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white24,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                            Get.width,
+                                                          ),
+                                                        ),
+                                                        child: Icon(
+                                                          Icons
+                                                              .play_arrow_rounded,
+                                                          color: MyColors.white,
+                                                        ),
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              Expanded(
+                                                flex: 4,
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Container(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                        horizontal: 10,
+                                                        vertical: 5,
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                        color: MyColors.orange,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                      ),
+                                                      child: Text(
+                                                        "Premium",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: TextStyle(
+                                                          fontFamily:
+                                                              MyStyles.Medium,
+                                                          fontSize: MyStyles.H7,
+                                                          color: MyColors.white,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    Text(
+                                                      "1h30m",
+                                                      textAlign:
+                                                          TextAlign.start,
+                                                      style: TextStyle(
+                                                        fontFamily:
+                                                            MyStyles.Medium,
+                                                        fontSize: MyStyles.H6,
+                                                        color: MyColors.grey,
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    Text(
+                                                      "Episode 1",
+                                                      textAlign:
+                                                          TextAlign.start,
+                                                      style: TextStyle(
+                                                        fontFamily:
+                                                            MyStyles.SemiBold,
+                                                        fontSize: MyStyles.H5,
+                                                        color: MyColors.white,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+                                            textAlign: TextAlign.start,
+                                            style: TextStyle(
+                                              height: 1.5,
+                                              fontFamily: MyStyles.Regular,
+                                              fontSize: MyStyles.H5,
+                                              color: MyColors.whiteGrey,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  },
+                                  separatorBuilder: (_, __) {
+                                    return SizedBox(
+                                      height: 10,
+                                    );
+                                  },
+                                  itemCount: 2,
+                                ),
+                              )
+                            : Container(),
+                      ),
                       SizedBox(
                         height: 20,
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 20),
-                        child: ListView.separated(
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          itemBuilder: (_, index) {
-                            return Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: MyColors.soft,
-                              ),
-                              child: Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        flex: 2,
-                                        child: Stack(
-                                          alignment: Alignment.center,
-                                          children: [
-                                            Container(
-                                              width: 121,
-                                              height: 83,
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                color: MyColors.grey,
-                                                image: DecorationImage(
-                                                  fit: BoxFit.cover,
-                                                  image: AssetImage(
-                                                    MyStrings
-                                                            .listMostPopularImage[
-                                                        index],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Container(
-                                              width: 121,
-                                              height: 83,
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                color: Colors.black54,
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 50,
-                                              width: 50,
-                                              padding: EdgeInsets.all(5),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white24,
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                  Get.width,
-                                                ),
-                                              ),
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  color: Colors.white24,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                    Get.width,
-                                                  ),
-                                                ),
-                                                child: Icon(
-                                                  Icons.play_arrow_rounded,
-                                                  color: MyColors.white,
-                                                ),
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Expanded(
-                                        flex: 4,
-                                        child: Column(
-                                          children: [
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                color: MyColors.orange,
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            );
-                          },
-                          separatorBuilder: (_, __) {
-                            return SizedBox(
-                              height: 10,
-                            );
-                          },
-                          itemCount: 2,
-                        ),
                       ),
                     ],
                   )
