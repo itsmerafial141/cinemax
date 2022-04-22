@@ -24,6 +24,8 @@ abstract class Routes {
   static const WISHLIST = _Paths.WISHLIST;
   static const GENRE = _Paths.GENRE;
   static const MOST_POPULAR_MOVIE = _Paths.MOST_POPULAR_MOVIE;
+  static const PREMIUM_ACCOUNT = _Paths.PREMIUM_ACCOUNT;
+  static const PAYMENT_METHOD = _Paths.PAYMENT_METHOD;
 }
 
 abstract class _Paths {
@@ -45,4 +47,6 @@ abstract class _Paths {
   static const WISHLIST = '/wishlist';
   static const GENRE = '/genre';
   static const MOST_POPULAR_MOVIE = '/most-popular-movie';
+  static const PREMIUM_ACCOUNT = '/premium-account';
+  static const PAYMENT_METHOD = '/payment-method';
 }

@@ -10,7 +10,7 @@ void main() {
   runApp(
     AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, //set as per your  status bar color
+        statusBarColor: Colors.black, //set as per your  status bar color
         systemNavigationBarColor:
             MyColors.dark, //set as per your navigation bar color
         statusBarIconBrightness:
@@ -19,7 +19,7 @@ void main() {
       ),
       child: GetMaterialApp(
         title: "Application",
-        initialRoute: AppPages.INITIAL_OB,
+        initialRoute: AppPages.INITIAL_PA,
         getPages: AppPages.routes,
         debugShowCheckedModeBanner: false,
       ),

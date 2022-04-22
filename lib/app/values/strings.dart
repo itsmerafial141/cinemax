@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:cinemax/app/values/icons.dart';
+import 'package:flutter/material.dart';
 
 class MyStrings {
   // Onboarding
@@ -325,5 +326,23 @@ class MyStrings {
       "id": "RT4",
       "name": "NC-17",
     },
+  ];
+
+  // Premium Account
+  static List<String> listFitureTittle = [
+    "Streaming in high quality",
+    "Ad-free viewing experience",
+    "Download to watch later",
+    "Text of different languages",
+    "Stream on multiple devices",
+    "With the best audio quality",
+  ];
+  static List<IconData> listFitureIcon = [
+    Icons.hd,
+    Icons.remove_circle,
+    Icons.download_for_offline,
+    Icons.closed_caption_off_rounded,
+    Icons.computer_rounded,
+    Icons.volume_up_rounded,
   ];
 }
