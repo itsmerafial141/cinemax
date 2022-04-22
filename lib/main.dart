@@ -19,7 +19,7 @@ void main() {
       ),
       child: GetMaterialApp(
         title: "Application",
-        initialRoute: AppPages.INITIAL_PA,
+        initialRoute: AppPages.INITIAL_OB,
         getPages: AppPages.routes,
         debugShowCheckedModeBanner: false,
       ),

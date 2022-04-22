@@ -80,7 +80,11 @@ class DownloadView extends GetView<DownloadController> {
                       message: MyStrings.listMostPopularTittle[index],
                       child: InkWell(
                         onTap: () {
-                          Get.toNamed(AppPages.INITIAL_MD, arguments: index);
+                          Get.toNamed(AppPages.INITIAL_MD, arguments: [
+                            {
+                              "id": MyStrings.listDataMovie[index]["id"],
+                            }
+                          ]);
                         },
                         borderRadius: BorderRadius.circular(15),
                         child: Container(

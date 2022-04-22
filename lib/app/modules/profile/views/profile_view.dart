@@ -1,3 +1,4 @@
+import 'package:cinemax/app/routes/app_pages.dart';
 import 'package:cinemax/app/values/colors.dart';
 import 'package:cinemax/app/values/strings.dart';
 import 'package:flutter/material.dart';
@@ -136,67 +137,75 @@ class ProfileView extends GetView<ProfileController> {
               ),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 20),
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
+                child: InkWell(
+                  onTap: () {
+                    Get.toNamed(AppPages.INITIAL_PA);
+                  },
                   borderRadius: BorderRadius.circular(20),
-                  color: MyColors.orange,
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color.fromRGBO(255, 159, 51, 1),
-                        ),
-                        child: Image(
-                          height: 30,
-                          width: 30,
-                          image: AssetImage(MyIcons.premium),
-                        ),
-                      ),
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: MyColors.orange,
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Expanded(
-                      flex: 6,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Premium Member",
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                              fontFamily: MyStyles.SemiBold,
-                              fontSize: MyStyles.H4,
-                              color: MyColors.white,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Color.fromRGBO(255, 159, 51, 1),
+                            ),
+                            child: Image(
+                              height: 30,
+                              width: 30,
+                              image: AssetImage(MyIcons.premium),
                             ),
                           ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Container(
-                            // width: Get.width * 0.65,
-                            child: Text(
-                              "New movies are coming for you, Download Now!",
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                fontFamily: MyStyles.Regular,
-                                fontSize: MyStyles.H5,
-                                color: MyColors.white,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          flex: 6,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Premium Member",
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                  fontFamily: MyStyles.SemiBold,
+                                  fontSize: MyStyles.H4,
+                                  color: MyColors.white,
+                                ),
                               ),
-                            ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Container(
+                                // width: Get.width * 0.65,
+                                child: Text(
+                                  "New movies are coming for you, Download Now!",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontFamily: MyStyles.Regular,
+                                    fontSize: MyStyles.H5,
+                                    color: MyColors.white,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    )
-                  ],
+                        )
+                      ],
+                    ),
+                  ),
                 ),
               ),
               SizedBox(

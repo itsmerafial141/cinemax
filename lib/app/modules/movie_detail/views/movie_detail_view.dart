@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:cinemax/app/routes/app_pages.dart';
 import 'package:cinemax/app/values/colors.dart';
 import 'package:cinemax/app/values/strings.dart';
 import 'package:flutter/material.dart';
@@ -356,7 +357,9 @@ class MovieDetailView extends GetView<MovieDetailController> {
                         Tooltip(
                           message: "Download",
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Get.toNamed(AppPages.INITIAL_PA);
+                            },
                             borderRadius: BorderRadius.circular(Get.width),
                             child: Container(
                               padding: EdgeInsets.all(15),

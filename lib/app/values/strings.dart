@@ -345,4 +345,15 @@ class MyStrings {
     Icons.computer_rounded,
     Icons.volume_up_rounded,
   ];
+
+  // Payment Method
+  static List<String> listPaymentMethodNoRek = [
+    "•••• •••• •••• 87652",
+    "•••• •••• •••• 87652",
+  ];
+
+  static List<String> listPaymentMethodImage = [
+    "assets/images/VISA.png",
+    "assets/images/MASTER CARD.png",
+  ];
 }

@@ -361,18 +361,20 @@ class HomeView extends GetView<HomeController> {
                     ),
                     Row(
                       children: List.generate(
-                        MyStrings.listMostPopularImage.length,
+                        MyStrings.listDataMovie.length,
                         (index) {
                           return Container(
                             margin: EdgeInsets.symmetric(horizontal: 5),
                             child: Tooltip(
-                              message: MyStrings.listMostPopularTittle[index],
+                              message: MyStrings.listDataMovie[index]["tittle"],
                               child: InkWell(
                                 onTap: () {
-                                  Get.toNamed(
-                                    AppPages.INITIAL_MD,
-                                    arguments: index,
-                                  );
+                                  Get.toNamed(AppPages.INITIAL_MD, arguments: [
+                                    {
+                                      "id": MyStrings.listDataMovie[index]
+                                          ["id"],
+                                    }
+                                  ]);
                                 },
                                 borderRadius: BorderRadius.circular(20),
                                 child: Column(
@@ -388,8 +390,9 @@ class HomeView extends GetView<HomeController> {
                                         image: DecorationImage(
                                           fit: BoxFit.fitWidth,
                                           image: AssetImage(
-                                            MyStrings
-                                                .listMostPopularImage[index],
+                                            MyStrings.listDataMovie[index]
+                                                    ["image"]
+                                                .toString(),
                                             // "assets/images/blackpanther.jpg",
                                           ),
                                         ),
@@ -415,8 +418,9 @@ class HomeView extends GetView<HomeController> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            MyStrings
-                                                .listMostPopularTittle[index],
+                                            MyStrings.listDataMovie[index]
+                                                    ["tittle"]
+                                                .toString(),
                                             maxLines: 1,
                                             overflow: TextOverflow.fade,
                                             softWrap: false,
@@ -430,8 +434,9 @@ class HomeView extends GetView<HomeController> {
                                             height: 10,
                                           ),
                                           Text(
-                                            MyStrings
-                                                .listMostPopularKategori[index],
+                                            MyStrings.listDataMovie[index]
+                                                    ["genre"]
+                                                .toString(),
                                             style: TextStyle(
                                               fontFamily: MyStyles.Medium,
                                               fontSize: MyStyles.H7,
