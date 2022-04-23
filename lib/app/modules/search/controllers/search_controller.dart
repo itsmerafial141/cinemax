@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:cinemax/app/values/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,7 +16,22 @@ class SearchController extends GetxController {
 
   late TextEditingController searchController;
 
+  List<Map<String, String>> listDataMovieBySearch() {
+    return MyStrings.listDataMovie
+        .where((element) =>
+            element["tittle"]!.toLowerCase().contains(getNameFromSearch.value))
+        .toList();
+  }
+
+  List<Map<String, String>> listCastAndActorBySearch() {
+    return MyStrings.listCastAndCrew
+        .where((element) =>
+            element["name"]!.toLowerCase().contains(getNameFromSearch.value))
+        .toList();
+  }
+
   void checkActorName() {
+    // var actorList = ;
     var actorName = [
       "Rafial",
       "Fitra",

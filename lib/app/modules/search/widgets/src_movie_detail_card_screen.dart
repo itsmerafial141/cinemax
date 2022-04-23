@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
-import 'dart:math' as math;
 import 'package:cinemax/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,21 +11,23 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
   const SRCMovieDetailCardWidget({
     Key? key,
     required this.index,
+    required this.data,
   }) : super(key: key);
 
   final int index;
+  final List<Map<String, String>> data;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Tooltip(
-        message: MyStrings.listMostPopularTittle[index],
+        message: data[index]["tittle"],
         child: InkWell(
           onTap: () {
             Get.toNamed(AppPages.INITIAL_MD, arguments: [
               {
-                "id": MyStrings.listDataMovie[index]["id"],
+                "id": data[index]["id"],
               }
             ]);
           },
@@ -44,7 +45,7 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage(
-                          MyStrings.listMostPopularImage[index],
+                          data[index]["image"].toString(),
                         ),
                       ),
                     ),
@@ -72,7 +73,7 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                             width: 5,
                           ),
                           Text(
-                            "4.5",
+                            data[index]["rate"].toString(),
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: MyStyles.SemiBold,
@@ -102,7 +103,12 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      "Premium",
+                      MyStrings.listAcess
+                          .where((element) =>
+                              element["id"] ==
+                              data[index]["access_id"].toString())
+                          .toList()[0]["access"]
+                          .toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: MyStyles.Medium,
@@ -117,7 +123,7 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                   Container(
                     width: Get.width * 0.5,
                     child: Text(
-                      MyStrings.listMostPopularTittle[index],
+                      data[index]["tittle"].toString(),
                       textAlign: TextAlign.start,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
@@ -143,7 +149,7 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                         width: 5,
                       ),
                       Text(
-                        "2021",
+                        data[index]["release"].toString(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: MyStyles.Medium,
@@ -167,7 +173,7 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                         width: 5,
                       ),
                       Text(
-                        "148 Minutes",
+                        data[index]["duration"].toString(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: MyStyles.Medium,
@@ -191,9 +197,11 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                           ),
                         ),
                         child: Text(
-                          MyStrings.listRatingPG[math.Random().nextInt(
-                            MyStrings.listRatingPG.length,
-                          )],
+                          MyStrings.listRatingMovie
+                              .where((element) =>
+                                  element["id"] == data[index]["rating"])
+                              .toList()[0]["name"]
+                              .toString(),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: MyStyles.Medium,
@@ -218,7 +226,7 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                         width: 5,
                       ),
                       Text(
-                        "Action",
+                        data[index]["genre"].toString(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: MyStyles.Medium,
@@ -238,9 +246,7 @@ class SRCMovieDetailCardWidget extends StatelessWidget {
                         width: 10,
                       ),
                       Text(
-                        MyStrings.listGenreMovie[math.Random().nextInt(
-                          MyStrings.listGenreMovie.length,
-                        )],
+                        data[index]["category"].toString(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: MyStyles.Medium,

@@ -37,7 +37,12 @@ class SRCFilledScreen extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        SRCMovieDetailCardWidget(index: 0),
+        SRCMovieDetailCardWidget(
+          index: 0,
+          data: MyStrings.listDataMovie
+              .where((element) => element["id"] == "MV00")
+              .toList(),
+        ),
         SizedBox(
           height: 50,
         ),

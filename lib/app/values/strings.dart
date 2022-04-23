@@ -282,7 +282,7 @@ class MyStrings {
       "id": "CC03",
       "id_movie": "MV01",
       "image": "assets/images/castcrew.jpg",
-      "name": "Erik Sommerwwwws",
+      "name": "Elargo Dafinci",
       "position": "Writers",
     },
     {
