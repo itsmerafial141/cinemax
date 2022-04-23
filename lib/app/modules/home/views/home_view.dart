@@ -21,6 +21,7 @@ class HomeView extends GetView<HomeController> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: 20,
@@ -517,7 +518,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                     Row(
                       children: List.generate(
-                        MyStrings.listDataMovie.length,
+                        MyStrings.listUpcomingMovies.length,
                         (index) {
                           return Container(
                             margin: EdgeInsets.symmetric(horizontal: 5),
@@ -525,9 +526,9 @@ class HomeView extends GetView<HomeController> {
                               message: MyStrings.listDataMovie[index]["tittle"],
                               child: InkWell(
                                 onTap: () {
-                                  Get.toNamed(AppPages.INITIAL_MD, arguments: [
+                                  Get.toNamed(AppPages.INITIAL_TR, arguments: [
                                     {
-                                      "id": MyStrings.listDataMovie[index]
+                                      "id": MyStrings.listUpcomingMovies[index]
                                           ["id"],
                                     }
                                   ]);
@@ -546,8 +547,8 @@ class HomeView extends GetView<HomeController> {
                                         image: DecorationImage(
                                           fit: BoxFit.fitWidth,
                                           image: AssetImage(
-                                            MyStrings.listDataMovie[index]
-                                                    ["image"]
+                                            MyStrings.listUpcomingMovies[index]
+                                                    ["thumbnail"]
                                                 .toString(),
                                             // "assets/images/blackpanther.jpg",
                                           ),
@@ -574,7 +575,7 @@ class HomeView extends GetView<HomeController> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            MyStrings.listDataMovie[index]
+                                            MyStrings.listUpcomingMovies[index]
                                                     ["tittle"]
                                                 .toString(),
                                             maxLines: 1,
@@ -590,7 +591,7 @@ class HomeView extends GetView<HomeController> {
                                             height: 10,
                                           ),
                                           Text(
-                                            MyStrings.listDataMovie[index]
+                                            MyStrings.listUpcomingMovies[index]
                                                     ["genre"]
                                                 .toString(),
                                             style: TextStyle(

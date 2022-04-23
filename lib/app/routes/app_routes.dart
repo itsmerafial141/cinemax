@@ -27,6 +27,7 @@ abstract class Routes {
   static const PREMIUM_ACCOUNT = _Paths.PREMIUM_ACCOUNT;
   static const PAYMENT_METHOD = _Paths.PAYMENT_METHOD;
   static const UPCOMING_MOVIE = _Paths.UPCOMING_MOVIE;
+  static const TRAILER = _Paths.TRAILER;
 }
 
 abstract class _Paths {
@@ -51,4 +52,5 @@ abstract class _Paths {
   static const PREMIUM_ACCOUNT = '/premium-account';
   static const PAYMENT_METHOD = '/payment-method';
   static const UPCOMING_MOVIE = '/upcoming-movie';
+  static const TRAILER = '/trailer';
 }

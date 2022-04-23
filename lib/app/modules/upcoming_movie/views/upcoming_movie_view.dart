@@ -1,4 +1,5 @@
 import 'package:cinemax/app/modules/upcoming_movie/widgets/um_list_kategori_widget.dart';
+import 'package:cinemax/app/routes/app_pages.dart';
 import 'package:cinemax/app/values/colors.dart';
 import 'package:cinemax/app/values/icons.dart';
 import 'package:cinemax/app/values/strings.dart';
@@ -80,7 +81,16 @@ class UpcomingMovieView extends GetView<UpcomingMovieController> {
                   physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (_, index) {
                     return InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(
+                          AppPages.INITIAL_TR,
+                          arguments: [
+                            {
+                              "id": MyStrings.listUpcomingMovies[index]["id"],
+                            }
+                          ],
+                        );
+                      },
                       borderRadius: BorderRadius.circular(20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

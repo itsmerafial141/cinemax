@@ -8,6 +8,8 @@ import 'package:cinemax/app/modules/payment_method/bindings/payment_method_bindi
 import 'package:cinemax/app/modules/payment_method/views/payment_method_view.dart';
 import 'package:cinemax/app/modules/premium_account/bindings/premium_account_binding.dart';
 import 'package:cinemax/app/modules/premium_account/views/premium_account_view.dart';
+import 'package:cinemax/app/modules/trailer/bindings/trailer_binding.dart';
+import 'package:cinemax/app/modules/trailer/views/trailer_view.dart';
 import 'package:cinemax/app/modules/upcoming_movie/bindings/upcoming_movie_binding.dart';
 import 'package:cinemax/app/modules/upcoming_movie/views/upcoming_movie_view.dart';
 
@@ -72,6 +74,7 @@ class AppPages {
   static const INITIAL_PA = Routes.PREMIUM_ACCOUNT;
   static const INITIAL_PM = Routes.PAYMENT_METHOD;
   static const INITIAL_UM = Routes.UPCOMING_MOVIE;
+  static const INITIAL_TR = Routes.TRAILER;
 
   static final routes = [
     GetPage(
@@ -178,6 +181,11 @@ class AppPages {
       name: _Paths.UPCOMING_MOVIE,
       page: () => UpcomingMovieView(),
       binding: UpcomingMovieBinding(),
+    ),
+    GetPage(
+      name: _Paths.TRAILER,
+      page: () => TrailerView(),
+      binding: TrailerBinding(),
     ),
   ];
 }
