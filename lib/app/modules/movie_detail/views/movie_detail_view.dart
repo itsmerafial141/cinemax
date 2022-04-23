@@ -514,6 +514,18 @@ class MovieDetailView extends GetView<MovieDetailController> {
                                     borderRadius:
                                         BorderRadius.circular(Get.width),
                                     color: MyColors.blueAccent,
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(
+                                        controller
+                                            .listDataPickerJoinById(
+                                              MyStrings.listCastAndCrew,
+                                              "id_movie",
+                                              controller.id[0]["id"],
+                                            )[index]["image"]
+                                            .toString(),
+                                      ),
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
@@ -678,6 +690,8 @@ class MovieDetailView extends GetView<MovieDetailController> {
                                           color: MyColors.soft,
                                         ),
                                         child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Row(
                                               children: [
@@ -700,9 +714,16 @@ class MovieDetailView extends GetView<MovieDetailController> {
                                                             fit: BoxFit.cover,
                                                             image: AssetImage(
                                                               controller
-                                                                  .listDataPickerEqualsId(
-                                                                "image",
-                                                              ),
+                                                                  .listDataPickerJoinById(
+                                                                    MyStrings
+                                                                        .listEpisodeMovie,
+                                                                    "id_session",
+                                                                    controller
+                                                                        .idSeason
+                                                                        .value,
+                                                                  )[index]
+                                                                      ["image"]
+                                                                  .toString(),
                                                             ),
                                                           ),
                                                         ),
@@ -833,6 +854,24 @@ class MovieDetailView extends GetView<MovieDetailController> {
                                                   ),
                                                 ),
                                               ],
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Text(
+                                              controller
+                                                  .listDataPickerJoinById(
+                                                    MyStrings.listEpisodeMovie,
+                                                    "id_session",
+                                                    controller.idSeason.value,
+                                                  )[index]["tittle"]
+                                                  .toString(),
+                                              textAlign: TextAlign.start,
+                                              style: TextStyle(
+                                                fontFamily: MyStyles.Medium,
+                                                fontSize: MyStyles.H4,
+                                                color: MyColors.white,
+                                              ),
                                             ),
                                             SizedBox(
                                               height: 10,

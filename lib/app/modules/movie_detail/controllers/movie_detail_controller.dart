@@ -26,4 +26,23 @@ class MovieDetailController extends GetxController {
         .where((element) => element[idDataPick] == idDataJoin)
         .toList();
   }
+
+  @override
+  void onInit() {
+    super.onInit();
+    if (MyStrings.listDataMovie
+            .where(
+              (element) => element["id"] == id[0]["id"],
+            )
+            .toList()[0]["category"]
+            .toString() ==
+        "Serial") {
+      idSeason.value = listDataPickerJoinById(
+        MyStrings.listSessionsMovie,
+        "id_movie",
+        id[0]["id"],
+      )[0]["id"]
+          .toString();
+    }
+  }
 }
