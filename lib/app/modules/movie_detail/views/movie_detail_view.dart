@@ -599,40 +599,61 @@ class MovieDetailView extends GetView<MovieDetailController> {
                       ),
                       Container(
                         margin: EdgeInsets.symmetric(horizontal: 10),
-                        child: InkWell(
-                          onTap: () {
-                            controller.seassonDropDown.toggle();
-                          },
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 10,
-                              vertical: 5,
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  "Season 2",
-                                  style: TextStyle(
-                                    fontFamily: MyStyles.Medium,
-                                    fontSize: MyStyles.H5,
-                                    color: MyColors.white,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 5,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  showSeasonsDialog(context);
+                                  print(
+                                    controller.listDataPickerJoinById(
+                                      MyStrings.listSessionsMovie,
+                                      "id",
+                                      "SSMV30",
+                                    )[0]["name"],
+                                  );
+                                },
+                                borderRadius: BorderRadius.circular(20),
+                                child: Obx(
+                                  () => Text(
+                                    controller
+                                        .listDataPickerJoinById(
+                                          MyStrings.listSessionsMovie,
+                                          "id",
+                                          controller.idSeason.value,
+                                        )[0]["name"]
+                                        .toString(),
+                                    style: TextStyle(
+                                      fontFamily: MyStyles.Medium,
+                                      fontSize: MyStyles.H5,
+                                      color: MyColors.white,
+                                    ),
                                   ),
                                 ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Obx(
-                                  () => Icon(
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Obx(
+                                () => InkWell(
+                                  onTap: () {
+                                    controller.seassonDropDown.toggle();
+                                  },
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Icon(
                                     controller.seassonDropDown.value == true
                                         ? Icons.keyboard_arrow_down_rounded
                                         : Icons.keyboard_arrow_up_rounded,
                                     color: MyColors.white,
                                   ),
-                                )
-                              ],
-                            ),
+                                ),
+                              )
+                            ],
                           ),
                         ),
                       ),
@@ -644,63 +665,64 @@ class MovieDetailView extends GetView<MovieDetailController> {
                                   shrinkWrap: true,
                                   physics: NeverScrollableScrollPhysics(),
                                   itemBuilder: (_, index) {
-                                    return Container(
-                                      padding: EdgeInsets.all(10),
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        color: MyColors.soft,
-                                      ),
-                                      child: Column(
-                                        children: [
-                                          Row(
-                                            children: [
-                                              Expanded(
-                                                flex: 2,
-                                                child: Stack(
-                                                  alignment: Alignment.center,
-                                                  children: [
-                                                    Container(
-                                                      width: 121,
-                                                      height: 83,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8),
-                                                        color: MyColors.grey,
-                                                        image: DecorationImage(
-                                                          fit: BoxFit.cover,
-                                                          image: AssetImage(
-                                                            MyStrings
-                                                                    .listMostPopularImage[
-                                                                index],
+                                    return InkWell(
+                                      onTap: () {
+                                        Get.toNamed(AppPages.INITIAL_PA);
+                                      },
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Container(
+                                        padding: EdgeInsets.all(10),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: MyColors.soft,
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                  flex: 2,
+                                                  child: Stack(
+                                                    alignment: Alignment.center,
+                                                    children: [
+                                                      Container(
+                                                        width: 121,
+                                                        height: 83,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(8),
+                                                          color: MyColors.grey,
+                                                          image:
+                                                              DecorationImage(
+                                                            fit: BoxFit.cover,
+                                                            image: AssetImage(
+                                                              controller
+                                                                  .listDataPickerEqualsId(
+                                                                "image",
+                                                              ),
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    Container(
-                                                      width: 121,
-                                                      height: 83,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8),
-                                                        color: Colors.black54,
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      height: 50,
-                                                      width: 50,
-                                                      padding:
-                                                          EdgeInsets.all(5),
-                                                      decoration: BoxDecoration(
-                                                        color: Colors.white24,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(
-                                                          Get.width,
+                                                      Container(
+                                                        width: 121,
+                                                        height: 83,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(8),
+                                                          color: Colors.black54,
                                                         ),
                                                       ),
-                                                      child: Container(
+                                                      Container(
+                                                        height: 50,
+                                                        width: 50,
+                                                        padding:
+                                                            EdgeInsets.all(5),
                                                         decoration:
                                                             BoxDecoration(
                                                           color: Colors.white24,
@@ -710,96 +732,129 @@ class MovieDetailView extends GetView<MovieDetailController> {
                                                             Get.width,
                                                           ),
                                                         ),
-                                                        child: Icon(
-                                                          Icons
-                                                              .play_arrow_rounded,
-                                                          color: MyColors.white,
+                                                        child: Container(
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color:
+                                                                Colors.white24,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                              Get.width,
+                                                            ),
+                                                          ),
+                                                          child: Icon(
+                                                            Icons
+                                                                .play_arrow_rounded,
+                                                            color:
+                                                                MyColors.white,
+                                                          ),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+                                                Expanded(
+                                                  flex: 4,
+                                                  child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Container(
+                                                        padding: EdgeInsets
+                                                            .symmetric(
+                                                          horizontal: 10,
+                                                          vertical: 5,
+                                                        ),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color:
+                                                              MyColors.orange,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(8),
+                                                        ),
+                                                        child: Text(
+                                                          "Premium",
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                MyStyles.Medium,
+                                                            fontSize:
+                                                                MyStyles.H7,
+                                                            color:
+                                                                MyColors.white,
+                                                          ),
                                                         ),
                                                       ),
-                                                    )
-                                                  ],
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              Expanded(
-                                                flex: 4,
-                                                child: Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Container(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                        horizontal: 10,
-                                                        vertical: 5,
+                                                      SizedBox(
+                                                        height: 5,
                                                       ),
-                                                      decoration: BoxDecoration(
-                                                        color: MyColors.orange,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8),
-                                                      ),
-                                                      child: Text(
-                                                        "Premium",
+                                                      Text(
+                                                        controller
+                                                            .listDataPickerJoinById(
+                                                              MyStrings
+                                                                  .listEpisodeMovie,
+                                                              "id_session",
+                                                              controller
+                                                                  .idSeason
+                                                                  .value,
+                                                            )[index]["duration"]
+                                                            .toString(),
                                                         textAlign:
-                                                            TextAlign.center,
+                                                            TextAlign.start,
                                                         style: TextStyle(
                                                           fontFamily:
                                                               MyStyles.Medium,
-                                                          fontSize: MyStyles.H7,
+                                                          fontSize: MyStyles.H6,
+                                                          color: MyColors.grey,
+                                                        ),
+                                                      ),
+                                                      SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Text(
+                                                        "Episode ${index + 1}",
+                                                        textAlign:
+                                                            TextAlign.start,
+                                                        style: TextStyle(
+                                                          fontFamily:
+                                                              MyStyles.SemiBold,
+                                                          fontSize: MyStyles.H5,
                                                           color: MyColors.white,
                                                         ),
                                                       ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: 5,
-                                                    ),
-                                                    Text(
-                                                      "1h30m",
-                                                      textAlign:
-                                                          TextAlign.start,
-                                                      style: TextStyle(
-                                                        fontFamily:
-                                                            MyStyles.Medium,
-                                                        fontSize: MyStyles.H6,
-                                                        color: MyColors.grey,
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: 5,
-                                                    ),
-                                                    Text(
-                                                      "Episode 1",
-                                                      textAlign:
-                                                          TextAlign.start,
-                                                      style: TextStyle(
-                                                        fontFamily:
-                                                            MyStyles.SemiBold,
-                                                        fontSize: MyStyles.H5,
-                                                        color: MyColors.white,
-                                                      ),
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
-                                            "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
-                                            textAlign: TextAlign.start,
-                                            style: TextStyle(
-                                              height: 1.5,
-                                              fontFamily: MyStyles.Regular,
-                                              fontSize: MyStyles.H5,
-                                              color: MyColors.whiteGrey,
+                                              ],
                                             ),
-                                          ),
-                                        ],
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Text(
+                                              controller
+                                                  .listDataPickerJoinById(
+                                                    MyStrings.listEpisodeMovie,
+                                                    "id_session",
+                                                    controller.idSeason.value,
+                                                  )[index]["synopsis"]
+                                                  .toString(),
+                                              textAlign: TextAlign.start,
+                                              style: TextStyle(
+                                                height: 1.5,
+                                                fontFamily: MyStyles.Regular,
+                                                fontSize: MyStyles.H5,
+                                                color: MyColors.whiteGrey,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     );
                                   },
@@ -808,7 +863,13 @@ class MovieDetailView extends GetView<MovieDetailController> {
                                       height: 10,
                                     );
                                   },
-                                  itemCount: 2,
+                                  itemCount: controller
+                                      .listDataPickerJoinById(
+                                        MyStrings.listEpisodeMovie,
+                                        "id_session",
+                                        controller.idSeason.value,
+                                      )
+                                      .length,
                                 ),
                               )
                             : Container(),
@@ -910,6 +971,81 @@ class MovieDetailView extends GetView<MovieDetailController> {
                         height: 40,
                       ),
                     ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  showSeasonsDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Dialog(
+            backgroundColor: MyColors.soft,
+            insetAnimationCurve: Curves.easeInOut,
+            insetAnimationDuration: Duration(milliseconds: 500),
+            insetPadding: EdgeInsets.all(10),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              side: BorderSide.none,
+            ),
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    children: List.generate(
+                      controller
+                          .listDataPickerJoinById(
+                            MyStrings.listSessionsMovie,
+                            "id_movie",
+                            controller.id[0]["id"],
+                          )
+                          .length,
+                      (index) {
+                        return InkWell(
+                          onTap: () {
+                            Get.back();
+                            controller.idSeason.value = controller
+                                .listDataPickerJoinById(
+                                  MyStrings.listSessionsMovie,
+                                  "id_movie",
+                                  controller.id[0]["id"],
+                                )[index]["id"]
+                                .toString();
+                          },
+                          borderRadius: BorderRadius.circular(Get.width),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 20,
+                              vertical: 10,
+                            ),
+                            child: Text(
+                              controller
+                                  .listDataPickerJoinById(
+                                    MyStrings.listSessionsMovie,
+                                    "id_movie",
+                                    controller.id[0]["id"],
+                                  )[index]["name"]
+                                  .toString(),
+                              style: TextStyle(
+                                fontFamily: MyStyles.SemiBold,
+                                fontSize: MyStyles.H2,
+                                color: MyColors.white,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 )
               ],

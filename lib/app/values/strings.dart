@@ -287,17 +287,144 @@ class MyStrings {
     },
   ];
 
+  static var listSessionsMovie = [
+    {
+      "id": "SSMV30",
+      "name": "Season 1",
+      "id_movie": "MV03",
+    },
+    {
+      "id": "SSMV31",
+      "name": "Season 2",
+      "id_movie": "MV03",
+    },
+    {
+      "id": "SSMV32",
+      "name": "Season 3",
+      "id_movie": "MV03",
+    },
+    {
+      "id": "SSMV33",
+      "name": "Season 4",
+      "id_movie": "MV03",
+    },
+    {
+      "id": "SSMV34",
+      "name": "Season 5",
+      "id_movie": "MV03",
+    },
+    {
+      "id": "SSMV35",
+      "name": "Season 6",
+      "id_movie": "MV03",
+    },
+    {
+      "id": "SSMV36",
+      "name": "Season 7",
+      "id_movie": "MV03",
+    },
+  ];
+
   static var listEpisodeMovie = [
     {
       "id": "EPS00",
-      "id_movie": "MV03",
+      "id_session": "SSMV30",
+      "image": "assets/images/episode",
       "duration": "1h30m",
       "synopsis":
           "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
     },
     {
       "id": "EPS01",
-      "id_movie": "MV03",
+      "id_session": "SSMV30",
+      "image": "assets/images/episode",
+      "duration": "1h25m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+    {
+      "id": "EPS02",
+      "id_session": "SSMV30",
+      "image": "assets/images/episode",
+      "duration": "1h25m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+    {
+      "id": "EPS03",
+      "id_session": "SSMV30",
+      "image": "assets/images/episode",
+      "duration": "1h25m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+    {
+      "id": "EPS04",
+      "id_session": "SSMV30",
+      "image": "assets/images/episode",
+      "duration": "1h25m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+    {
+      "id": "EPS05",
+      "id_session": "SSMV30",
+      "image": "assets/images/episode",
+      "duration": "1h25m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+    {
+      "id": "EPS06",
+      "id_session": "SSMV30",
+      "image": "assets/images/episode",
+      "duration": "1h25m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+    {
+      "id": "EPS07",
+      "id_session": "SSMV30",
+      "image": "assets/images/episode",
+      "duration": "1h25m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+    {
+      "id": "EPS08",
+      "id_session": "SSMV30",
+      "image": "assets/images/episode",
+      "duration": "1h25m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+    {
+      "id": "EPS09",
+      "id_session": "SSMV30",
+      "image": "assets/images/episode",
+      "duration": "1h25m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+    {
+      "id": "EPS010",
+      "id_session": "SSMV30",
+      "image": "assets/images/episode",
+      "duration": "1h25m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+    {
+      "id": "EPS011",
+      "id_session": "SSMV30",
+      "image": "assets/images/episode",
+      "duration": "1h25m",
+      "synopsis":
+          "Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher.",
+    },
+    {
+      "id": "EPS012",
+      "id_session": "SSMV31",
       "image": "assets/images/episode",
       "duration": "1h25m",
       "synopsis":
