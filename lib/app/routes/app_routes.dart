@@ -26,6 +26,7 @@ abstract class Routes {
   static const MOST_POPULAR_MOVIE = _Paths.MOST_POPULAR_MOVIE;
   static const PREMIUM_ACCOUNT = _Paths.PREMIUM_ACCOUNT;
   static const PAYMENT_METHOD = _Paths.PAYMENT_METHOD;
+  static const UPCOMING_MOVIE = _Paths.UPCOMING_MOVIE;
 }
 
 abstract class _Paths {
@@ -49,4 +50,5 @@ abstract class _Paths {
   static const MOST_POPULAR_MOVIE = '/most-popular-movie';
   static const PREMIUM_ACCOUNT = '/premium-account';
   static const PAYMENT_METHOD = '/payment-method';
+  static const UPCOMING_MOVIE = '/upcoming-movie';
 }

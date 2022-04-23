@@ -10,7 +10,7 @@ void main() {
   runApp(
     AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        statusBarColor: MyColors.soft, //set as per your  status bar color
+        statusBarColor: MyColors.dark, //set as per your  status bar color
         systemNavigationBarColor:
             MyColors.dark, //set as per your navigation bar color
         statusBarIconBrightness:

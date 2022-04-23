@@ -461,6 +461,162 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: Get.width,
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  children: [
+                    Text(
+                      "Upcoming Movie",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: MyStyles.SemiBold,
+                        fontSize: MyStyles.H4,
+                        color: MyColors.white,
+                      ),
+                    ),
+                    Spacer(),
+                    Tooltip(
+                      message: "See All Movies",
+                      child: InkWell(
+                        onTap: () {
+                          Get.toNamed(AppPages.INITIAL_UM);
+                        },
+                        borderRadius: BorderRadius.circular(10),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 10,
+                          ),
+                          child: Text(
+                            "See All",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: MyStyles.Medium,
+                              fontSize: MyStyles.H5,
+                              color: MyColors.blueAccent,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Row(
+                      children: List.generate(
+                        MyStrings.listDataMovie.length,
+                        (index) {
+                          return Container(
+                            margin: EdgeInsets.symmetric(horizontal: 5),
+                            child: Tooltip(
+                              message: MyStrings.listDataMovie[index]["tittle"],
+                              child: InkWell(
+                                onTap: () {
+                                  Get.toNamed(AppPages.INITIAL_MD, arguments: [
+                                    {
+                                      "id": MyStrings.listDataMovie[index]
+                                          ["id"],
+                                    }
+                                  ]);
+                                },
+                                borderRadius: BorderRadius.circular(20),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      height: 200,
+                                      width: 150,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(20),
+                                          topRight: Radius.circular(20),
+                                        ),
+                                        image: DecorationImage(
+                                          fit: BoxFit.fitWidth,
+                                          image: AssetImage(
+                                            MyStrings.listDataMovie[index]
+                                                    ["image"]
+                                                .toString(),
+                                            // "assets/images/blackpanther.jpg",
+                                          ),
+                                        ),
+                                        color: MyColors.soft,
+                                      ),
+                                      // child:
+                                    ),
+                                    Container(
+                                      width: 150,
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 15,
+                                        vertical: 10,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: MyColors.soft,
+                                        borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(20),
+                                          bottomRight: Radius.circular(20),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            MyStrings.listDataMovie[index]
+                                                    ["tittle"]
+                                                .toString(),
+                                            maxLines: 1,
+                                            overflow: TextOverflow.fade,
+                                            softWrap: false,
+                                            style: TextStyle(
+                                              fontFamily: MyStyles.SemiBold,
+                                              fontSize: MyStyles.H5,
+                                              color: MyColors.white,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            MyStrings.listDataMovie[index]
+                                                    ["genre"]
+                                                .toString(),
+                                            style: TextStyle(
+                                              fontFamily: MyStyles.Medium,
+                                              fontSize: MyStyles.H7,
+                                              color: MyColors.grey,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
                 height: Get.height * 0.2,
               ),
             ],

@@ -69,237 +69,194 @@ class DownloadView extends GetView<DownloadController> {
               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: ListView.separated(
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (_, index) {
-                    return Tooltip(
-                      message: MyStrings.listMostPopularTittle[index],
-                      child: InkWell(
-                        onTap: () {
-                          Get.toNamed(AppPages.INITIAL_MD, arguments: [
-                            {
-                              "id": MyStrings.listDataMovie[index]["id"],
-                            }
-                          ]);
-                        },
-                        borderRadius: BorderRadius.circular(15),
-                        child: Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: MyColors.soft,
-                          ),
-                          child: Row(
-                            children: [
-                              Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Container(
-                                    height: 83,
-                                    width: 121,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(15),
-                                      color: MyColors.grey,
-                                      image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage(
-                                          MyStrings.listMostPopularImage[index],
+              MyStrings.listMostPopularImage.isNotEmpty
+                  ? Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: ListView.separated(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemBuilder: (_, index) {
+                          return Tooltip(
+                            message: MyStrings.listMostPopularTittle[index],
+                            child: InkWell(
+                              onTap: () {
+                                Get.toNamed(AppPages.INITIAL_MD, arguments: [
+                                  {
+                                    "id": MyStrings.listDataMovie[index]["id"],
+                                  }
+                                ]);
+                              },
+                              borderRadius: BorderRadius.circular(15),
+                              child: Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: MyColors.soft,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        Container(
+                                          height: 83,
+                                          width: 121,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                            color: MyColors.grey,
+                                            image: DecorationImage(
+                                              fit: BoxFit.cover,
+                                              image: AssetImage(
+                                                MyStrings.listMostPopularImage[
+                                                    index],
+                                              ),
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                  ),
-                                  index == 0
-                                      ? Stack(
-                                          alignment: Alignment.center,
-                                          children: [
-                                            Container(
-                                              height: 83,
-                                              width: 121,
-                                              padding: EdgeInsets.all(20),
-                                              decoration: BoxDecoration(
-                                                color: Colors.black87,
-                                                borderRadius:
-                                                    BorderRadius.circular(15),
-                                              ),
-                                            ),
-                                            Obx(
-                                              () =>
-                                                  CircularStepProgressIndicator(
-                                                totalSteps: 100,
-                                                currentStep: controller
-                                                    .downloadProgress.value,
-                                                stepSize: 10,
-                                                width: 60,
-                                                height: 60,
-                                                padding: 0,
-                                                selectedStepSize: 5,
-                                                unselectedStepSize: 5,
-                                                roundedCap: (_, __) => true,
-                                                selectedColor: MyColors.grey,
-                                                unselectedColor: MyColors.white,
-                                              ),
-                                            ),
-                                            Obx(
-                                              () => Tooltip(
-                                                message: controller
-                                                        .downloadPause.isTrue
-                                                    ? "Start"
-                                                    : "Stop",
-                                                child: InkWell(
-                                                  onTap: () {
-                                                    controller.downloadPause
-                                                        .toggle();
-                                                    print(controller
-                                                        .downloadPause.value);
-                                                    controller
-                                                        .resumneDownload();
-                                                  },
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                    Get.width,
-                                                  ),
-                                                  child: Icon(
-                                                    controller.downloadProgress
-                                                                .value ==
-                                                            100
-                                                        ? Icons.refresh
-                                                        : controller
-                                                                .downloadPause
-                                                                .isTrue
-                                                            ? Icons
-                                                                .play_arrow_rounded
-                                                            : Icons
-                                                                .stop_rounded,
-                                                    color: MyColors.white,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        )
-                                      : Container(),
-                                ],
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Action",
-                                    style: TextStyle(
-                                      fontFamily: MyStyles.Medium,
-                                      fontSize: MyStyles.H6,
-                                      color: MyColors.whiteGrey,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Container(
-                                    width: Get.width * 0.4,
-                                    child: Text(
-                                      MyStrings.listMostPopularTittle[index],
-                                      overflow: TextOverflow.ellipsis,
-                                      softWrap: false,
-                                      maxLines: 2,
-                                      style: TextStyle(
-                                        fontFamily: MyStyles.SemiBold,
-                                        fontSize: MyStyles.H5,
-                                        color: MyColors.white,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  index != 0
-                                      ? Row(
-                                          children: [
-                                            Text(
-                                              "Movie",
-                                              style: TextStyle(
-                                                fontFamily: MyStyles.Medium,
-                                                fontSize: MyStyles.H6,
-                                                color: MyColors.grey,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              width: 5,
-                                            ),
-                                            Container(
-                                              height: 10,
-                                              width: 1,
-                                              color: MyColors.grey,
-                                            ),
-                                            SizedBox(
-                                              width: 5,
-                                            ),
-                                            Text(
-                                              "1.78 GB",
-                                              style: TextStyle(
-                                                fontFamily: MyStyles.Medium,
-                                                fontSize: MyStyles.H6,
-                                                color: MyColors.grey,
-                                              ),
-                                            ),
-                                          ],
-                                        )
-                                      : Row(
-                                          children: [
-                                            Icon(
-                                              Icons.file_download_outlined,
-                                              color: MyColors.grey,
-                                              size: 15,
-                                            ),
-                                            SizedBox(
-                                              width: 5,
-                                            ),
-                                            Obx(
-                                              () => Row(
+                                        index == 0
+                                            ? Stack(
+                                                alignment: Alignment.center,
                                                 children: [
                                                   Container(
-                                                    width: 18,
-                                                    child: Text(
-                                                      (1.78 *
-                                                                  ((100 -
-                                                                          controller
-                                                                              .downloadProgress
-                                                                              .value) /
-                                                                      100))
-                                                              .toString()[0] +
-                                                          (1.78 *
-                                                                  ((100 -
-                                                                          controller
-                                                                              .downloadProgress
-                                                                              .value) /
-                                                                      100))
-                                                              .toString()[1] +
-                                                          (1.78 *
-                                                                  ((100 -
-                                                                          controller
-                                                                              .downloadProgress
-                                                                              .value) /
-                                                                      100))
-                                                              .toString()[2],
-                                                      overflow:
-                                                          TextOverflow.clip,
-                                                      softWrap: false,
-                                                      style: TextStyle(
-                                                        fontFamily:
-                                                            MyStyles.Medium,
-                                                        fontSize: MyStyles.H6,
-                                                        color: MyColors.grey,
+                                                    height: 83,
+                                                    width: 121,
+                                                    padding: EdgeInsets.all(20),
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.black87,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              15),
+                                                    ),
+                                                  ),
+                                                  Obx(
+                                                    () =>
+                                                        CircularStepProgressIndicator(
+                                                      totalSteps: 100,
+                                                      currentStep: controller
+                                                          .downloadProgress
+                                                          .value,
+                                                      stepSize: 10,
+                                                      width: 60,
+                                                      height: 60,
+                                                      padding: 0,
+                                                      selectedStepSize: 5,
+                                                      unselectedStepSize: 5,
+                                                      roundedCap: (_, __) =>
+                                                          true,
+                                                      selectedColor:
+                                                          MyColors.grey,
+                                                      unselectedColor:
+                                                          MyColors.white,
+                                                    ),
+                                                  ),
+                                                  Obx(
+                                                    () => Tooltip(
+                                                      message: controller
+                                                              .downloadPause
+                                                              .isTrue
+                                                          ? "Start"
+                                                          : "Stop",
+                                                      child: InkWell(
+                                                        onTap: () {
+                                                          controller
+                                                              .downloadPause
+                                                              .toggle();
+                                                          print(controller
+                                                              .downloadPause
+                                                              .value);
+                                                          controller
+                                                              .resumneDownload();
+                                                        },
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(
+                                                          Get.width,
+                                                        ),
+                                                        child: Icon(
+                                                          controller.downloadProgress
+                                                                      .value ==
+                                                                  100
+                                                              ? Icons.refresh
+                                                              : controller
+                                                                      .downloadPause
+                                                                      .isTrue
+                                                                  ? Icons
+                                                                      .play_arrow_rounded
+                                                                  : Icons
+                                                                      .stop_rounded,
+                                                          color: MyColors.white,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
+                                                ],
+                                              )
+                                            : Container(),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Action",
+                                          style: TextStyle(
+                                            fontFamily: MyStyles.Medium,
+                                            fontSize: MyStyles.H6,
+                                            color: MyColors.whiteGrey,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Container(
+                                          width: Get.width * 0.4,
+                                          child: Text(
+                                            MyStrings
+                                                .listMostPopularTittle[index],
+                                            overflow: TextOverflow.ellipsis,
+                                            softWrap: false,
+                                            maxLines: 2,
+                                            style: TextStyle(
+                                              fontFamily: MyStyles.SemiBold,
+                                              fontSize: MyStyles.H5,
+                                              color: MyColors.white,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        index != 0
+                                            ? Row(
+                                                children: [
                                                   Text(
-                                                    " of 1.78GB | ${(100 - controller.downloadProgress.value)}%",
+                                                    "Movie",
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          MyStyles.Medium,
+                                                      fontSize: MyStyles.H6,
+                                                      color: MyColors.grey,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 5,
+                                                  ),
+                                                  Container(
+                                                    height: 10,
+                                                    width: 1,
+                                                    color: MyColors.grey,
+                                                  ),
+                                                  SizedBox(
+                                                    width: 5,
+                                                  ),
+                                                  Text(
+                                                    "1.78 GB",
                                                     style: TextStyle(
                                                       fontFamily:
                                                           MyStyles.Medium,
@@ -308,26 +265,136 @@ class DownloadView extends GetView<DownloadController> {
                                                     ),
                                                   ),
                                                 ],
+                                              )
+                                            : Row(
+                                                children: [
+                                                  Icon(
+                                                    Icons
+                                                        .file_download_outlined,
+                                                    color: MyColors.grey,
+                                                    size: 15,
+                                                  ),
+                                                  SizedBox(
+                                                    width: 5,
+                                                  ),
+                                                  Obx(
+                                                    () => Row(
+                                                      children: [
+                                                        Container(
+                                                          width: 18,
+                                                          child: Text(
+                                                            (1.78 *
+                                                                            ((100 - controller.downloadProgress.value) /
+                                                                                100))
+                                                                        .toString()[
+                                                                    0] +
+                                                                (1.78 * ((100 - controller.downloadProgress.value) / 100))
+                                                                        .toString()[
+                                                                    1] +
+                                                                (1.78 *
+                                                                        ((100 - controller.downloadProgress.value) /
+                                                                            100))
+                                                                    .toString()[2],
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .clip,
+                                                            softWrap: false,
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  MyStyles
+                                                                      .Medium,
+                                                              fontSize:
+                                                                  MyStyles.H6,
+                                                              color:
+                                                                  MyColors.grey,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          " of 1.78GB | ${(100 - controller.downloadProgress.value)}%",
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                MyStyles.Medium,
+                                                            fontSize:
+                                                                MyStyles.H6,
+                                                            color:
+                                                                MyColors.grey,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                        separatorBuilder: (_, __) {
+                          return SizedBox(
+                            height: 10,
+                          );
+                        },
+                        itemCount: MyStrings.listMostPopularImage.length,
                       ),
-                    );
-                  },
-                  separatorBuilder: (_, __) {
-                    return SizedBox(
-                      height: 10,
-                    );
-                  },
-                  itemCount: MyStrings.listMostPopularImage.length,
-                ),
-              ),
+                    )
+                  : Container(
+                      alignment: Alignment.center,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: Get.height * 0.2,
+                          ),
+                          Image(
+                            image: AssetImage(
+                              "assets/icons/folder (1) 1.png",
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            width: Get.width * 0.5,
+                            child: Text(
+                              "There is no movie yet!",
+                              textAlign: TextAlign.center,
+                              maxLines: 10,
+                              overflow: TextOverflow.ellipsis,
+                              softWrap: false,
+                              style: TextStyle(
+                                fontFamily: MyStyles.SemiBold,
+                                fontSize: MyStyles.H4,
+                                color: MyColors.whiteGrey,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            width: Get.width * 0.5,
+                            child: Text(
+                              "Find your movie by Type title, categories, years, etc ",
+                              textAlign: TextAlign.center,
+                              maxLines: 10,
+                              overflow: TextOverflow.ellipsis,
+                              softWrap: false,
+                              style: TextStyle(
+                                fontFamily: MyStyles.Medium,
+                                fontSize: MyStyles.H6,
+                                color: MyColors.grey,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
             ],
           ),
         ),

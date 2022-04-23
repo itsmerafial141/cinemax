@@ -313,6 +313,38 @@ class MyStrings {
       "name": "Gugu Mbatha-Raw",
       "position": "Actor",
     },
+    {
+      "id": "CC08",
+      "id_movie": "",
+      "id_upMovie": "UPM001",
+      "image": "assets/images/Matt Reeves.jpg",
+      "name": "Matt Reeves",
+      "position": "Director",
+    },
+    {
+      "id": "CC09",
+      "id_movie": "",
+      "id_upMovie": "UPM001",
+      "image": "assets/images/Robert Pattinson.jpg",
+      "name": "Robert Pattinson",
+      "position": "Actor",
+    },
+    {
+      "id": "CC10",
+      "id_movie": "",
+      "id_upMovie": "UPM001",
+      "image": "assets/images/Zoë Kravitz.jpg",
+      "name": "Zoë Kravitz",
+      "position": "Actor",
+    },
+    {
+      "id": "CC11",
+      "id_movie": "",
+      "id_upMovie": "UPM001",
+      "image": "assets/images/Jeffrey Wright.jpg",
+      "name": "Jeffrey Wright",
+      "position": "Actor",
+    },
   ];
 
   static var listSessionsMovie = [
@@ -573,5 +605,35 @@ class MyStrings {
   static List<String> listPaymentMethodImage = [
     "assets/images/VISA.png",
     "assets/images/MASTER CARD.png",
+  ];
+
+  static var listUpcomingMovies = [
+    {
+      "id": "UPM001",
+      "tittle": "The Batman",
+      "thumbnail": "assets/images/The Batman.jpg",
+      "release": "February 2, 2022",
+      "genre": "Action",
+      "Synopsis":
+          "When the Riddler, a sadistic serial killer, begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.",
+    },
+  ];
+
+  static var listUpcomingMoviesGallery = [
+    {
+      "id": "UPG001",
+      "id_upMovie": "UPM001",
+      "image": "assets/images/thebatman1.jpg",
+    },
+    {
+      "id": "UPG002",
+      "id_upMovie": "UPM001",
+      "image": "assets/images/thebatman2.jpg",
+    },
+    {
+      "id": "UPG003",
+      "id_upMovie": "UPM001",
+      "image": "assets/images/thebatman3.jpg",
+    },
   ];
 }

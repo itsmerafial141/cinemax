@@ -21,7 +21,7 @@ class WishlistView extends GetView<WishlistController> {
               Container(
                 height: 32,
                 width: Get.width,
-                margin: const EdgeInsets.all(20),
+                margin: EdgeInsets.all(20),
                 child: Stack(
                   children: [
                     Container(
@@ -78,7 +78,11 @@ class WishlistView extends GetView<WishlistController> {
                       message: MyStrings.listMostPopularTittle[index],
                       child: InkWell(
                         onTap: () {
-                          Get.toNamed(AppPages.INITIAL_MD, arguments: index);
+                          Get.toNamed(AppPages.INITIAL_MD, arguments: [
+                            {
+                              "id": MyStrings.listDataMovie[index]["id"],
+                            }
+                          ]);
                         },
                         borderRadius: BorderRadius.circular(15),
                         child: Container(
