@@ -22,11 +22,11 @@ class WishlistView extends GetView<WishlistController> {
                 height: 32,
                 width: Get.width,
                 margin: EdgeInsets.all(20),
+                alignment: Alignment.center,
                 child: Stack(
                   children: [
                     Container(
                       width: Get.width,
-                      alignment: Alignment.center,
                       child: Text(
                         "Wishlist",
                         textAlign: TextAlign.center,

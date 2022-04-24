@@ -28,6 +28,7 @@ abstract class Routes {
   static const PAYMENT_METHOD = _Paths.PAYMENT_METHOD;
   static const UPCOMING_MOVIE = _Paths.UPCOMING_MOVIE;
   static const TRAILER = _Paths.TRAILER;
+  static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
 }
 
 abstract class _Paths {
@@ -53,4 +54,5 @@ abstract class _Paths {
   static const PAYMENT_METHOD = '/payment-method';
   static const UPCOMING_MOVIE = '/upcoming-movie';
   static const TRAILER = '/trailer';
+  static const EDIT_PROFILE = '/edit-profile';
 }

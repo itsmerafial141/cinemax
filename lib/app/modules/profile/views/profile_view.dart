@@ -108,7 +108,9 @@ class ProfileView extends GetView<ProfileController> {
                         child: Tooltip(
                           message: "Edit Profile",
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Get.toNamed(AppPages.INITIAL_EP);
+                            },
                             borderRadius: BorderRadius.circular(10),
                             child: Container(
                               padding: EdgeInsets.all(10),

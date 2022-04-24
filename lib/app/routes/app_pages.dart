@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import 'package:cinemax/app/modules/edit_profile/bindings/edit_profile_binding.dart';
+import 'package:cinemax/app/modules/edit_profile/views/edit_profile_view.dart';
 import 'package:cinemax/app/modules/genre/bindings/genre_binding.dart';
 import 'package:cinemax/app/modules/genre/views/genre_view.dart';
 import 'package:cinemax/app/modules/most_popular_movie/bindings/most_popular_movie_binding.dart';
@@ -65,7 +67,7 @@ class AppPages {
   static const INITIAL_NP = Routes.NEW_PASSWORD;
   static const INITIAL_NV = Routes.NAVIGATION;
   static const INITIAL_SR = Routes.SEARCH;
-  static const INITIAL_Dw = Routes.DOWNLOAD;
+  static const INITIAL_DW = Routes.DOWNLOAD;
   static const INITIAL_PR = Routes.PROFILE;
   static const INITIAL_MD = Routes.MOVIE_DETAIL;
   static const INITIAL_WL = Routes.WISHLIST;
@@ -75,6 +77,7 @@ class AppPages {
   static const INITIAL_PM = Routes.PAYMENT_METHOD;
   static const INITIAL_UM = Routes.UPCOMING_MOVIE;
   static const INITIAL_TR = Routes.TRAILER;
+  static const INITIAL_EP = Routes.EDIT_PROFILE;
 
   static final routes = [
     GetPage(
@@ -186,6 +189,11 @@ class AppPages {
       name: _Paths.TRAILER,
       page: () => TrailerView(),
       binding: TrailerBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_PROFILE,
+      page: () => EditProfileView(),
+      binding: EditProfileBinding(),
     ),
   ];
 }
