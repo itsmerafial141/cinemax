@@ -614,6 +614,8 @@ class MyStrings {
       "thumbnail": "assets/images/The Batman.jpg",
       "release": "February 2, 2022",
       "genre": "Action",
+      "link_video":
+          "https://video.fandango.com/MPX/video/NBCU_Fandango/119/558/source_538F8479-28C6-4E82-9FD2-4A534B4032F0TheBatman_Trailer_TheBatandTheCat_1987625539553_mp4_video_1280x720_2432000_primary_audio_eng_6.mp4",
       "Synopsis":
           "When the Riddler, a sadistic serial killer, begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.",
     },

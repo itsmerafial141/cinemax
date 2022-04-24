@@ -1,3 +1,4 @@
+import 'package:chewie/chewie.dart';
 import 'package:cinemax/app/values/colors.dart';
 import 'package:cinemax/app/values/icons.dart';
 import 'package:cinemax/app/values/styles.dart';
@@ -86,20 +87,72 @@ class TrailerView extends GetView<TrailerController> {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                height: Get.width * 0.5,
-                margin: EdgeInsets.symmetric(horizontal: 20),
-                decoration: BoxDecoration(
-                  color: MyColors.soft,
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(
-                      controller
-                          .getListUpcomingMovie()[0]["thumbnail"]
-                          .toString(),
+              Obx(
+                () => Container(
+                  height: Get.width * 0.5,
+                  width: Get.width,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: MyColors.soft,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                        controller
+                            .getListUpcomingMovie()[0]["thumbnail"]
+                            .toString(),
+                      ),
                     ),
                   ),
+                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  child: controller.startTrailer.isFalse
+                      ? InkWell(
+                          onTap: () {
+                            controller.playVideoController();
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(Get.width),
+                              color: MyColors.white.withOpacity(0.5),
+                            ),
+                            child: Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(Get.width),
+                                color: MyColors.white.withOpacity(0.5),
+                              ),
+                              child: Icon(
+                                Icons.play_arrow_rounded,
+                                color: MyColors.blueAccent,
+                                size: 40,
+                              ),
+                            ),
+                          ),
+                        )
+                      : GetBuilder<TrailerController>(
+                          init: TrailerController(),
+                          builder: (controller) => Expanded(
+                            child: controller.chewieController != null &&
+                                    controller
+                                        .chewieController!
+                                        .videoPlayerController
+                                        .value
+                                        .isInitialized
+                                ? ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Chewie(
+                                      controller: controller.chewieController!,
+                                    ),
+                                  )
+                                : Container(
+                                    width: 50,
+                                    height: 50,
+                                    alignment: Alignment.center,
+                                    child: CircularProgressIndicator(),
+                                  ),
+                          ),
+                        ),
                 ),
               ),
               SizedBox(

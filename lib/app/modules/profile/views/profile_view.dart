@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cinemax/app/routes/app_pages.dart';
 import 'package:cinemax/app/values/colors.dart';
 import 'package:cinemax/app/values/strings.dart';
@@ -240,10 +242,178 @@ class ProfileView extends GetView<ProfileController> {
               SizedBox(
                 height: 20,
               ),
+              Tooltip(
+                message: "Log Out",
+                child: ElevatedButton(
+                  onPressed: () {
+                    showLogoutDialog(context);
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      MyColors.dark,
+                    ),
+                    shape: MaterialStateProperty.all<OutlinedBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(Get.width),
+                        side: BorderSide(
+                          width: 1,
+                          color: MyColors.blueAccent,
+                        ),
+                      ),
+                    ),
+                    fixedSize: MaterialStateProperty.all<Size>(
+                      Size(Get.width * 0.9, 56),
+                    ),
+                  ),
+                  child: Text(
+                    "Log Out",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: MyStyles.Medium,
+                      fontSize: MyStyles.H4,
+                      color: MyColors.blueAccent,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Future<dynamic> showLogoutDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Dialog(
+            backgroundColor: MyColors.soft,
+            insetAnimationCurve: Curves.easeInOut,
+            insetAnimationDuration: Duration(milliseconds: 500),
+            insetPadding: EdgeInsets.all(10),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              side: BorderSide.none,
+            ),
+            child: Wrap(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    children: [
+                      Image(
+                        image: AssetImage(
+                          "assets/icons/Question.png",
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "Are you Sure ?",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: MyStyles.SemiBold,
+                          fontSize: MyStyles.H3,
+                          color: MyColors.white,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "Ullamcorper imperdiet urna id non sed est sem. Rhoncus amet, enim purus gravida donec aliquet.",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: MyStyles.Regular,
+                          fontSize: MyStyles.H6,
+                          color: MyColors.grey,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: InkWell(
+                              onTap: () {
+                                Get.offAllNamed(AppPages.INITIAL_LG);
+                              },
+                              borderRadius: BorderRadius.circular(Get.width),
+                              child: Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.circular(Get.width),
+                                  border: Border.all(
+                                    width: 1,
+                                    color: MyColors.blueAccent,
+                                  ),
+                                ),
+                                child: Text(
+                                  "Log Out",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: MyStyles.Regular,
+                                    fontSize: MyStyles.H4,
+                                    color: MyColors.blueAccent,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(
+                            child: InkWell(
+                              onTap: () {
+                                Get.back();
+                              },
+                              borderRadius: BorderRadius.circular(Get.width),
+                              child: Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.circular(Get.width),
+                                  color: MyColors.blueAccent,
+                                  border: Border.all(
+                                    width: 1,
+                                    color: MyColors.blueAccent,
+                                  ),
+                                ),
+                                child: Text(
+                                  "Cancel",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: MyStyles.Regular,
+                                    fontSize: MyStyles.H4,
+                                    color: MyColors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
