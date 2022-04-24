@@ -1,3 +1,4 @@
+import 'package:cinemax/app/routes/app_pages.dart';
 import 'package:cinemax/app/values/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -166,34 +167,40 @@ class SignupView extends GetView<SignupController> {
                       width: 10,
                     ),
                     Container(
-                      width: Get.width*0.75,
-                      child: RichText(
-                        text: TextSpan(
-                          style: TextStyle(
-                            fontSize: MyStyles.H6,
-                            fontFamily: MyStyles.Medium,
-                            color: MyColors.grey,
+                      width: Get.width * 0.75,
+                      child: InkWell(
+                        onTap: () {
+                          Get.toNamed(AppPages.INITIAL_PP);
+                        },
+                        borderRadius: BorderRadius.circular(10),
+                        child: RichText(
+                          text: TextSpan(
+                            style: TextStyle(
+                              fontSize: MyStyles.H6,
+                              fontFamily: MyStyles.Medium,
+                              color: MyColors.grey,
+                            ),
+                            children: [
+                              TextSpan(text: "I agree to the "),
+                              TextSpan(
+                                text: "Terms and Services",
+                                style: TextStyle(
+                                  fontSize: MyStyles.H6,
+                                  fontFamily: MyStyles.Medium,
+                                  color: MyColors.blueAccent,
+                                ),
+                              ),
+                              TextSpan(text: " and "),
+                              TextSpan(
+                                text: "Privacy Policy",
+                                style: TextStyle(
+                                  fontSize: MyStyles.H6,
+                                  fontFamily: MyStyles.Medium,
+                                  color: MyColors.blueAccent,
+                                ),
+                              ),
+                            ],
                           ),
-                          children: <TextSpan>[
-                            TextSpan(text: "I agree to the "),
-                            TextSpan(
-                              text: "Terms and Services",
-                              style: TextStyle(
-                                fontSize: MyStyles.H6,
-                                fontFamily: MyStyles.Medium,
-                                color: MyColors.blueAccent,
-                              ),
-                            ),
-                            TextSpan(text: " and "),
-                            TextSpan(
-                              text: "Privacy Policy",
-                              style: TextStyle(
-                                fontSize: MyStyles.H6,
-                                fontFamily: MyStyles.Medium,
-                                color: MyColors.blueAccent,
-                              ),
-                            ),
-                          ],
                         ),
                       ),
                     ),

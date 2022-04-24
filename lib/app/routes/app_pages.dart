@@ -10,6 +10,8 @@ import 'package:cinemax/app/modules/payment_method/bindings/payment_method_bindi
 import 'package:cinemax/app/modules/payment_method/views/payment_method_view.dart';
 import 'package:cinemax/app/modules/premium_account/bindings/premium_account_binding.dart';
 import 'package:cinemax/app/modules/premium_account/views/premium_account_view.dart';
+import 'package:cinemax/app/modules/privacy_policy/bindings/privacy_policy_binding.dart';
+import 'package:cinemax/app/modules/privacy_policy/views/privacy_policy_view.dart';
 import 'package:cinemax/app/modules/trailer/bindings/trailer_binding.dart';
 import 'package:cinemax/app/modules/trailer/views/trailer_view.dart';
 import 'package:cinemax/app/modules/upcoming_movie/bindings/upcoming_movie_binding.dart';
@@ -78,6 +80,7 @@ class AppPages {
   static const INITIAL_UM = Routes.UPCOMING_MOVIE;
   static const INITIAL_TR = Routes.TRAILER;
   static const INITIAL_EP = Routes.EDIT_PROFILE;
+  static const INITIAL_PP = Routes.PRIVACY_POLICY;
 
   static final routes = [
     GetPage(
@@ -194,6 +197,11 @@ class AppPages {
       name: _Paths.EDIT_PROFILE,
       page: () => EditProfileView(),
       binding: EditProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.PRIVACY_POLICY,
+      page: () => PrivacyPolicyView(),
+      binding: PrivacyPolicyBinding(),
     ),
   ];
 }
