@@ -274,14 +274,17 @@ class HomeView extends GetView<HomeController> {
                 height: 10,
               ),
               Obx(
-                () => AnimatedSmoothIndicator(
-                  activeIndex: controller.carouselController.value,
-                  count: MyStrings.listCarouselTittle.length,
-                  effect: ExpandingDotsEffect(
-                    dotColor: MyColors.blueAccent50,
-                    activeDotColor: MyColors.blueAccent,
-                    dotHeight: 10,
-                    dotWidth: 10,
+                () => Container(
+                  alignment: Alignment.center,
+                  child: AnimatedSmoothIndicator(
+                    activeIndex: controller.carouselController.value,
+                    count: MyStrings.listCarouselTittle.length,
+                    effect: ExpandingDotsEffect(
+                      dotColor: MyColors.blueAccent50,
+                      activeDotColor: MyColors.blueAccent,
+                      dotHeight: 10,
+                      dotWidth: 10,
+                    ),
                   ),
                 ),
               ),
